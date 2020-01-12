@@ -1,0 +1,17 @@
+/*grid*/
+.grid {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin: -10px;
+}
+
+.grid .grid_height_full {
+  height: 100%;
+}
+
+.grid > .grid__item {
+  padding: 10px;
+}

@@ -1,0 +1,49 @@
+// color
+$swatch_0: #000000;
+$swatch_1: #3a5896;
+$swatch_2: #ffffff;
+$swatch_3: #ffce09;
+$swatch_4: #999999;
+$swatch_5: #e8e8e8;
+$swatch_6: #cccccc;
+$swatch_7: #dddddd;
+$swatch_8: #f5f5f5;
+$swatch_9: #666666;
+$swatch_10: #fbc60f;
+$swatch_11: #f9a510;
+$swatch_12: #f3f3f3;
+$swatch_13: #f2f6f9;
+$swatch_14: #efefef;
+$swatch_15: #eaeeef;
+$swatch_16: #ff0c0a;
+$swatch_17: #fbdbdb;
+$swatch_18: #f9a510;
+
+// gradient
+$gradient-accent: linear-gradient(
+  -65deg,
+  #ff0909 0%,
+  #ff4115 41%,
+  #ff6a47 43%,
+  #ff0909 99%,
+  #ff0909 100%
+);
+
+//font-icon
+$icomoon-font-family: "icomoon" !default;
+$icomoon-font-path: "../fonts/icons/" !default;
+
+$icon-arrow-big-right: "\e900";
+$icon-arrow-big-left: "\e901";
+$icon-arrow_left: "\e902";
+$icon-arrow-right: "\e903";
+$icon-logo-agency: "\e904";
+$icon-loupe: "\e905";
+$icon-marker: "\e906";
+
+//break point
+$sm: 480px;
+$md: 640px;
+$lg: 960px;
+$xl: 1200px;
+$xxl: 1600px;
