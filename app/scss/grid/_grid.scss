@@ -8,10 +8,26 @@
   margin: -10px;
 }
 
-.grid .grid_height_full {
+.grid_height_full {
   height: 100%;
+}
+
+.grid {
+  &_xl-indent-outer {
+    @media (min-width: $xl) {
+      margin: -15px;
+    }
+  }
 }
 
 .grid > .grid__item {
   padding: 10px;
+}
+
+.grid > .grid__item {
+  &_xl-indent-inner {
+    @media (min-width: $xl) {
+      padding: 5px;
+    }
+  }
 }

@@ -1,1 +1,72 @@
 /*button*/
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  border: 1px solid transparent;
+  background: $gradient-accent;
+  width: 225px;
+  height: 55px;
+  font-family: "Roboto";
+  box-shadow: inset 0 0 6px 20px transparent, 0 5px 13px $swatch_19;
+  transition: box-shadow 0.3s ease-in-out;
+  cursor: pointer;
+  &:hover {
+    box-shadow: inset -12px 0px 17px 20px $swatch_16,
+      0 5px 13px fade-out(rgba($swatch_19, 3), 0.5);
+    transition: box-shadow 0.3s ease-in-out;
+  }
+  &_small {
+    width: 165px;
+    height: 40px;
+    border-radius: 20px;
+  }
+  &_middle {
+    width: 225px;
+    height: 55px;
+    border-radius: 28px;
+  }
+  &__txt {
+    color: $swatch_2;
+    font-size: 14px;
+    font-weight: 500;
+    &_small {
+      font-size: 12px;
+    }
+  }
+}
+.button-arrow {
+  color: $swatch_4;
+  transition: 0.2s ease-in-out;
+  cursor: pointer;
+  &_bold.icon-arrow-big-right {
+    font-size: 25px;
+  }
+  &_bold.icon-arrow-big-left {
+    @extend .button-arrow_bold.icon-arrow-big-right;
+  }
+  &:hover {
+    color: $swatch_1;
+  }
+  &_position {
+    @media (min-width: $lg) {
+      position: absolute;
+      top: 7px;
+      &_right {
+        right: 0;
+        margin-right: 250px;
+        @media (min-width: $xl) {
+          margin-right: 180px;
+        }
+      }
+      &_left {
+        left: 0;
+        margin-left: 250px;
+        @media (min-width: $xl) {
+          margin-left: 196px;
+        }
+      }
+    }
+  }
+}

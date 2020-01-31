@@ -1,3 +1,100 @@
 /*header*/
 .header {
+  padding: 25px 0px;
+  @media (min-width: $xl) {
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-bottom: 35px;
+  }
+  &__content {
+    @media (min-width: $xl) {
+      padding-top: 10px;
+    }
+  }
+  &__box-link {
+    display: flex;
+    justify-content: center;
+    @media (min-width: $md) {
+      height: 100%;
+      align-items: center;
+    }
+    &_position {
+      @media (min-width: $xl) {
+        &_right {
+          justify-content: flex-start;
+        }
+        &_left {
+          justify-content: flex-end;
+        }
+      }
+    }
+    &_indent-inner {
+      @media (min-width: $xl) {
+        &_left {
+          padding-left: 17px;
+        }
+      }
+    }
+  }
+
+  &__link {
+    display: inline-block;
+    text-decoration: none;
+    transition: 3s;
+    &::after {
+      content: "";
+      display: block;
+      position: relative;
+      top: 3px;
+      width: 0%;
+      height: 2px;
+      background-color: $swatch_0;
+    }
+    &:hover::after {
+      width: 100%;
+      transition: width 0.2s ease-in-out;
+    }
+  }
+  &__icon.icon-marker {
+    padding-right: 15px;
+    color: $swatch_1;
+    font-size: 20px;
+    animation: marker-anim 3s ease-in-out infinite;
+  }
+  &__txt {
+    font-size: 15px;
+    font-weight: 400;
+    &_big {
+      font-size: 18px;
+      font-weight: 700;
+    }
+    &_font {
+      &_sans-serif {
+        font-family: "Roboto";
+      }
+      &_bold {
+        font-weight: 500;
+      }
+    }
+    &_position {
+      &_bottom {
+        position: relative;
+        bottom: 4px;
+      }
+    }
+    &_animation-color {
+      animation: signs-anim 3s ease-in-out infinite;
+    }
+  }
+
+  &__box-button {
+    display: flex;
+    justify-content: center;
+    @media (min-width: $xl) {
+      padding-top: 5px;
+      justify-content: flex-end;
+    }
+  }
+  &__modal {
+  }
 }

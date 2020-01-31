@@ -1,0 +1,41 @@
+// animation
+@mixin animationColor($name, $color1, $color2) {
+  @keyframes #{$name} {
+    0% {
+      color: $color1;
+    }
+    25% {
+      color: $color1;
+    }
+    35% {
+      color: $color2;
+    }
+    50% {
+      color: $color2;
+    }
+    75% {
+      color: $color2;
+    }
+    85% {
+      color: $color1;
+    }
+    100% {
+      color: $color1;
+    }
+  }
+}
+
+// It is recommended that the element has absolute positioning.
+@mixin animationMoving($name, $direction, $numOffset) {
+  @keyframes #{$name} {
+    0% {
+      margin-#{$direction}: 0;
+    }
+    50% {
+      margin-#{$direction}: #{$numOffset}px;
+    }
+    100% {
+      margin-#{$direction}: 0;
+    }
+  }
+}

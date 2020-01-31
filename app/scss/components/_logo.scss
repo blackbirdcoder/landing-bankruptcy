@@ -1,1 +1,29 @@
 /*logo*/
+.logo {
+  display: flex;
+  justify-content: center;
+  @media (min-width: $xl) {
+    padding-left: 15px;
+    justify-content: flex-start;
+  }
+  &__link {
+    display: flex;
+    text-decoration: none;
+  }
+  &__icon.icon-logo-agency {
+    font-size: 50px;
+    color: $swatch_1;
+  }
+  &__box-text {
+    display: block;
+    padding-top: 5px;
+    padding-left: 14px;
+  }
+  &__txt {
+    display: block;
+    text-transform: uppercase;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 20px;
+  }
+}

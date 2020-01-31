@@ -1,3 +1,205 @@
 /*section*/
 .section {
+  &__background {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: -2;
+  }
+  &__background > .section__picture {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  &__foreground {
+    position: relative;
+    z-index: 1;
+  }
+}
+
+.section-hero {
+  height: 620px;
+  display: flex;
+  flex-direction: column;
+  &__content-top {
+    position: relative;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-color: $swatch_1;
+    text-align: center;
+    @media (min-width: $xl) {
+      padding-top: 42px;
+      padding-bottom: 48px;
+    }
+    &_figure-triangle::after {
+      @media (min-width: $md) {
+        content: "";
+        width: 0;
+        margin: 0px -25px;
+        border: 32px solid transparent;
+        border-top: 32px solid $swatch_1;
+        position: absolute;
+        top: 178px;
+      }
+      @media (min-width: $xl) {
+        top: 188px;
+      }
+    }
+  }
+  &__heading {
+    margin-bottom: 0;
+    color: $swatch_2;
+    font-size: 28px;
+    @media (min-width: $sm) {
+      font-size: 30px;
+    }
+    @media (min-width: $md) {
+      font-size: 32px;
+    }
+    @media (min-width: $lg) {
+      font-size: 35px;
+    }
+    @media (min-width: $xl) {
+      font-size: 45px;
+    }
+    &_position {
+      display: block;
+      @media (min-width: $md) {
+        display: inline;
+      }
+    }
+  }
+  &__subtitle {
+    @extend .section-hero__heading;
+    display: block;
+    margin-top: 20px;
+    font-size: 23px;
+    font-weight: bold;
+    @media (min-width: $sm) {
+      font-size: 25px;
+    }
+    @media (min-width: $md) {
+      font-size: 26px;
+    }
+    @media (min-width: $xl) {
+      margin-top: 15px;
+      font-size: 29px;
+    }
+  }
+  &__box-content-text {
+  }
+  &__content-bottom {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    position: relative;
+  }
+
+  &__box-content {
+  }
+  &__box-slider {
+    margin-top: 175px;
+    @media (min-width: $sm) {
+      margin-top: 165px;
+    }
+    @media (min-width: $md) {
+      margin-top: 130px;
+    }
+    @media (min-width: $lg) {
+      margin-top: 125px;
+    }
+  }
+  &__box-figure {
+    width: 300px;
+    position: absolute;
+    top: 10px;
+    z-index: -1;
+    @media (min-width: $sm) {
+      top: -12px;
+    }
+    @media (min-width: $lg) {
+      top: -30px;
+    }
+    @media (min-width: $xl) {
+      margin-left: -8px;
+      top: -49px;
+    }
+    &_hide {
+      display: none;
+    }
+    &_visible {
+      @media (min-width: $lg) {
+        display: block;
+      }
+    }
+    &_position {
+      @media (min-width: $lg) {
+        right: 15px;
+        top: 150px;
+      }
+      @media (min-width: $xl) {
+        right: 65px;
+      }
+      @media (min-width: $xxl) {
+        right: 293px;
+        top: 172px;
+      }
+    }
+  }
+  &__figure {
+    width: 85%;
+    margin: auto;
+    @media (min-width: $sm) {
+      width: 90%;
+    }
+    @media (min-width: $md) {
+      width: 95%;
+    }
+    @media (min-width: $lg) {
+      width: 100%;
+    }
+    @media (min-width: $xl) {
+      width: 102%;
+    }
+    &_size {
+      @media (min-width: $lg) {
+        width: 150%;
+      }
+      @media (min-width: $xl) {
+        width: 180%;
+      }
+      @media (min-width: $xxl) {
+        width: 200%;
+      }
+    }
+  }
+  &__picture {
+  }
+  // arrow down
+  .js-arrow-down::after {
+    font-family: $icomoon-font-family;
+    content: $icon-arrow-big-right;
+    font-size: 50px;
+    color: $swatch_16;
+    transform: rotate(90deg);
+    position: absolute;
+    z-index: 3;
+    width: 50px;
+    height: 50px;
+    top: 10px; //50
+    left: 50%;
+    // margin: 0 -15px;
+    margin-left: -20px;
+    animation: arrow-down 1s linear infinite;
+  }
+  .js-arrow-down_md-off::after {
+    @media (min-width: $md) {
+      content: "";
+    }
+  }
+  .js-arrow-down_off::after {
+    content: "";
+  }
 }

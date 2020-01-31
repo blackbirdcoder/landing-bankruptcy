@@ -1,4 +1,20 @@
 header.header
   .container
     .header__content
-
+      .grid.grid_xl-indent-outer
+        .grid__item.grid__item_xl-indent-inner.width-1-1.width-1-4-lg.width-1-4-xl
+          include ../logo/_logo
+        .grid__item.grid__item_xl-indent-inner.width-1-1.width-1-2-sm.width-1-3-md.width-1-4-lg
+          .header__box-link.header__box-link_position_right.header__box-link_indent-inner_left
+            a.header__link(href="#map")
+              span.header__icon.icon-marker
+              span.header__txt.header__txt_font_sans-serif.header__txt_font_bold.header__txt_position_bottom Архангельск
+        .grid__item.grid__item_xl-indent-inner.width-1-1.width-1-2-sm.width-1-3-md.width-1-4-lg.width-1-3-xl
+          .header__box-link.header__box-link_position_left
+            a.header__link(href="tel:88182635000")
+              span.header__txt.header__txt_big.header__txt_animation-color +8 (818) 263-50-00
+        .grid__item.grid__item_xl-indent-inner.width-1-1.width-1-3-md.width-1-4-lg.width-1-6-xl
+          .header__box-button
+            button.button.button_small.animated.wobble.delay-2s#btnOpenModal
+              span.button__txt.button__txt_small Заказать звонок
+      .header__modal

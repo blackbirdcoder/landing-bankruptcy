@@ -144,8 +144,15 @@ select::-ms-expand {
   display: none;
 }
 
+button:active,
+:hover,
+:focus {
+  outline: 0;
+  outline-offset: 0;
+}
+
 .page {
-  font-family: "Tinos";
+  font-family: "Tinos", serif;
   font-size: 16px;
   font-weight: normal;
   font-style: normal;
@@ -159,8 +166,17 @@ select::-ms-expand {
 }
 
 .container {
-  max-width: 1150px;
+  max-width: 1165px;
   min-width: 320px;
   margin: 0 auto;
   padding: 0 15px;
 }
+
+// animation color marker
+@include animationColor(marker-anim, $swatch_1, $swatch_16);
+
+//animation color number phone
+@include animationColor(signs-anim, $swatch_0, $swatch_16);
+
+//animation arrow down
+@include animationMoving(arrow-down, top, -7);
