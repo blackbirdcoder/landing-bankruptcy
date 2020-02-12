@@ -1,5 +1,9 @@
 /*section*/
 .section {
+  padding-top: 75px;
+  @media (min-width: $lg) {
+    padding-top: 100px;
+  }
   &__background {
     position: absolute;
     top: 0;
@@ -18,8 +22,9 @@
     z-index: 1;
   }
 }
-
+// section hero
 .section-hero {
+  padding-top: 0;
   height: 620px;
   display: flex;
   flex-direction: column;
@@ -45,6 +50,9 @@
       }
       @media (min-width: $xl) {
         top: 188px;
+      }
+      @media (min-width: $ultra) {
+        top: 183px;
       }
     }
   }
@@ -111,20 +119,28 @@
       margin-top: 125px;
     }
   }
+  &__wrap {
+    max-width: 1165px;
+    position: relative;
+    z-index: -1;
+  }
   &__box-figure {
     width: 300px;
     position: absolute;
-    top: 10px;
+    top: 9px;
     z-index: -1;
     @media (min-width: $sm) {
-      top: -12px;
+      top: -22px;
+    }
+    @media (min-width: $md) {
+      top: -16px;
     }
     @media (min-width: $lg) {
-      top: -30px;
+      top: -41px;
     }
     @media (min-width: $xl) {
       margin-left: -8px;
-      top: -49px;
+      top: -50px;
     }
     &_hide {
       display: none;
@@ -137,14 +153,15 @@
     &_position {
       @media (min-width: $lg) {
         right: 15px;
-        top: 150px;
+        top: -220px;
       }
       @media (min-width: $xl) {
-        right: 65px;
+        right: 23px;
+        top: -185px;
       }
       @media (min-width: $xxl) {
-        right: 293px;
-        top: 172px;
+        right: -91px;
+        top: -168px;
       }
     }
   }
@@ -201,5 +218,89 @@
   }
   .js-arrow-down_off::after {
     content: "";
+  }
+}
+// section finance
+.section-finance {
+  &__box-content {
+    position: relative;
+    max-width: 1020px;
+  }
+  &__box-text {
+    margin-bottom: 35px;
+    text-align: center;
+    @media (min-width: $lg) {
+      padding-top: 50px;
+      padding-left: 20px;
+      text-align: left;
+    }
+    @media (min-width: $xl) {
+      padding-top: 43px;
+      padding-left: 43px;
+      margin-right: -55px;
+    }
+  }
+  &__heading {
+    margin-bottom: 35px;
+    font-size: 28px;
+    @media (min-width: $sm) {
+      font-size: 30px;
+    }
+    @media (min-width: $lg) {
+      margin-bottom: 90px;
+      padding-left: 57px;
+    }
+    @media (min-width: $xl) {
+      font-size: 40px;
+      letter-spacing: -1px;
+      line-height: 1;
+    }
+    &_position {
+      display: block;
+      margin: 0;
+      @media (min-width: $lg) {
+        padding-left: 0;
+      }
+    }
+  }
+  &__box-card {
+    margin: 0 auto;
+    max-width: 407px;
+    @media (min-width: $lg) {
+      margin: 0;
+    }
+    @media (min-width: $xl) {
+      margin-left: 3px;
+    }
+  }
+  &__box-form {
+    margin: 0 auto;
+    max-width: 421px;
+  }
+  &__box-figure {
+    display: none;
+    @media (min-width: $lg) {
+      display: block;
+      position: absolute;
+      bottom: -295px;
+      left: 233px;
+      z-index: 1;
+    }
+    @media (min-width: $xl) {
+      bottom: -327px;
+      left: 251px;
+    }
+    @media (min-width: $ultra) {
+      bottom: -350px;
+    }
+  }
+  &__figure {
+    width: 340px;
+    max-width: 400px;
+    @media (min-width: $xl) {
+      width: 385px;
+    }
+  }
+  &__picture {
   }
 }

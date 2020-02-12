@@ -1,0 +1,21 @@
+//- Remember to specify values for variables
+//- formFeedbackTitle and formFeedbackSubtitle
+//- Point where the first include to the form
+form.form-feedback(action="/" method="POST")
+  .form-feedback__header
+    span.form-feedback__title=formFeedbackTitle
+    span.form-feedback__subtitle=formFeedbackSubtitle
+  .form-feedback__group
+    .form-feedback__box-field
+      input.form-feedback__field#fieldPhone(type="tel" placeholder="Введите ваш телефон" autocomplete="off" maxlength="20")
+    .form-feedback__box-button
+      input.button.button_middle.button_font(type="submit" value="Получить инструкцию")
+  .form-feedback__footer
+    .form-feedback__box-inform
+      span.form-feedback__txt-inform Мы перезвоним в течение 5 минут
+    .form-feedback__group
+      .form-feedback__box-checkbox
+        input.form-feedback__checkbox(type="checkbox" checked required)
+        span.form-feedback__txt-checkbox Согласен с&nbsp;
+          a.form-feedback__link(href="#" target="_blank") обработкой персональных данных
+

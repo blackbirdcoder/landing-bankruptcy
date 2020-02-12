@@ -16,6 +16,7 @@
     box-shadow: inset -12px 0px 17px 20px $swatch_16,
       0 5px 13px fade-out(rgba($swatch_19, 3), 0.5);
     transition: box-shadow 0.3s ease-in-out;
+    -webkit-tap-highlight-color: transparent;
   }
   &_small {
     width: 165px;
@@ -34,6 +35,13 @@
     &_small {
       font-size: 12px;
     }
+  }
+  &_font {
+    @extend .button__txt;
+  }
+  &:focus {
+    @extend .button__txt;
+    border-color: transparent;
   }
 }
 .button-arrow {

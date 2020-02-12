@@ -1,1 +1,51 @@
 /*card*/
+// card-merit
+.card-merit {
+  position: relative;
+  &__box-content-top {
+    @media (min-width: $lg) {
+      position: absolute;
+      top: -55px;
+      z-index: -1;
+    }
+    @media (min-width: $xl) {
+      top: -50px;
+    }
+  }
+  &__figure {
+    margin: 0 auto;
+    width: 90px;
+    height: 87px;
+    object-fit: contain;
+  }
+  &__picture {
+  }
+  &__box-content-bottom {
+    margin: 0 auto;
+    width: 290px;
+    @media (min-width: $md) {
+      width: 300px;
+    }
+    @media (min-width: $xl) {
+      width: 320px;
+      margin-left: 58px;
+    }
+  }
+  &__txt {
+    font-size: 18px;
+    font-style: italic;
+    line-height: 25px;
+    @media (min-width: $sm) {
+      font-size: 19px;
+    }
+    @media (min-width: $md) {
+      font-size: 20px;
+    }
+    @media (min-width: $xl) {
+      font-size: 21px;
+    }
+    &_bold {
+      font-weight: bold;
+    }
+  }
+}

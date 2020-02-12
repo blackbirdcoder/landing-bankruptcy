@@ -1,0 +1,20 @@
+section.section.section-finance
+  .container
+    .section-finance__box-content
+      .grid
+        .grid__item.width-1-1.width-1-2-lg
+          .section-finance__box-text
+            h2.section-finance__heading Попали в тяжелое
+              span.section-finance__heading.section-finance__heading_position финансовое
+              span.section-finance__heading.section-finance__heading_position положение?
+            .section-finance__box-card
+              include ../card/_card-merit
+        .grid__item.width-1-1.width-1-2-lg
+          .section-finance__box-form
+            //-variables for text for form headings
+            -let formFeedbackTitle = "Получите бесплатно пошаговую инструкцию "
+            -let formFeedbackSubtitle = "по процедуре банкротства прямо сейчас:"
+            include ../form/_form-feedback
+      .section-finance__box-figure
+        figure.section-finance__figure.wow.slideInLeft(data-wow-offset="200")
+          img.section-finance__picture(src="../img/pig.png", alt="pig")

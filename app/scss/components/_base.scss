@@ -11,6 +11,10 @@
   padding: 0;
 }
 
+[type="checkbox"]:invalid {
+  box-shadow: none;
+}
+
 body {
   margin: 0;
 }
