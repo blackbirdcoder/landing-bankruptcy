@@ -5,8 +5,8 @@
   box-sizing: border-box;
 }
 
-::-moz-focus-outer,
-::-moz-focus-inner {
+*::-moz-focus-outer,
+*::-moz-focus-inner {
   border: 0;
   padding: 0;
 }
@@ -174,4 +174,8 @@ button:active,
   min-width: 320px;
   margin: 0 auto;
   padding: 0 15px;
+}
+
+.button:focus {
+  outline: 0;
 }

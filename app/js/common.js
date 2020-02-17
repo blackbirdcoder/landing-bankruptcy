@@ -90,12 +90,12 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
   let hideButtonClosed = () => {
-    let clickInput = false;
+    let exitStatus = false;
     boxButton.classList.add("js-button-hide");
     showButtonClosed = () => {
       boxButton.classList.remove("js-button-hide");
-      clickInput = true;
-      if (clickInput) {
+      exitStatus = true;
+      if (exitStatus) {
         input.removeEventListener("blur", showButtonClosed);
       }
     };
