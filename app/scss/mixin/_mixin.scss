@@ -39,3 +39,18 @@
     }
   }
 }
+
+//animation show window
+@mixin animationShowHide($name, $initial, $average, $final) {
+  @keyframes #{$name} {
+    0% {
+      opacity: $initial;
+    }
+    50% {
+      opacity: $average;
+    }
+    100% {
+      opacity: $final;
+    }
+  }
+}

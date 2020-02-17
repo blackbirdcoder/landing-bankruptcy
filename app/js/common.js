@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
       document.scrollingElement.scrollTop > 10 &&
       sectionHeroContent.classList.contains("js-arrow-down")
     ) {
-      cssClassReplace("js-arrow-down_off", "js-arrow-down");
+      cssClassReplace(sectionHeroContent, "js-arrow-down_off", "js-arrow-down");
       window.removeEventListener("scroll", arrowDownScroll);
     }
   };
@@ -63,15 +63,69 @@ document.addEventListener("DOMContentLoaded", () => {
       document.documentElement.clientWidth >= 640 &&
       sectionHeroContent.classList.contains("js-arrow-down")
     ) {
-      cssClassReplace("js-arrow-down_off", "js-arrow-down");
+      cssClassReplace(sectionHeroContent, "js-arrow-down_off", "js-arrow-down");
       window.removeEventListener("resize", arrowDownResize);
     }
   };
   window.addEventListener("resize", arrowDownResize);
 
+  //Modal window
+  let boxButton = document.querySelector(".modal__box-button");
+  let input = document.querySelector(".form-feedback__field");
+  let closedModal = () => {
+    setTimeout(function() {
+      modalWindow.classList.remove("js-modal-open");
+    }, 400);
+    modalWindow.classList.add("js-modal-closed");
+  };
+  clearListeners = () => {
+    window.removeEventListener("keydown", escapeClosedModal);
+    input.removeEventListener("focus", hideButtonClosed);
+  };
+  let escapeClosedModal = event => {
+    let keyboardKey = event.code;
+    if (keyboardKey === "Escape") {
+      closedModal();
+      clearListeners();
+    }
+  };
+  let hideButtonClosed = () => {
+    let clickInput = false;
+    boxButton.classList.add("js-button-hide");
+    showButtonClosed = () => {
+      boxButton.classList.remove("js-button-hide");
+      clickInput = true;
+      if (clickInput) {
+        input.removeEventListener("blur", showButtonClosed);
+      }
+    };
+    input.addEventListener("blur", showButtonClosed);
+  };
+  if (modalWindow.classList.contains("modal")) {
+    modalWindow.classList.add("js-modal-closed");
+  }
+  btnOpenModal.onclick = () => {
+    if (
+      modalWindow.classList.contains("js-modal-closed") &&
+      modalWindow.classList.contains("modal")
+    ) {
+      cssClassReplace(modalWindow, "js-modal-open", "js-modal-closed");
+      input.addEventListener("focus", hideButtonClosed);
+      window.addEventListener("keydown", escapeClosedModal);
+    }
+  };
+  btnCloseModal.onclick = () => {
+    if (
+      modalWindow.classList.contains("js-modal-open") ||
+      modalWindow.classList.contains("modal")
+    ) {
+      closedModal();
+      clearListeners();
+    }
+  };
   // functions assistants
-  function cssClassReplace(cssAddClass, cssRemoveClass) {
-    sectionHeroContent.classList.add(cssAddClass);
-    sectionHeroContent.classList.remove(cssRemoveClass);
+  function cssClassReplace(elem, cssAddClass, cssRemoveClass) {
+    elem.classList.add(cssAddClass);
+    elem.classList.remove(cssRemoveClass);
   }
 });

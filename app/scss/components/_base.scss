@@ -184,3 +184,11 @@ button:active,
 
 //animation arrow down
 @include animationMoving(arrow-down, top, -7);
+
+//animation modal window
+@include animationShowHide(show-window, 0.3, 0.8, 1);
+@include animationShowHide(hide-window, 1, 0.8, 0);
+
+//animation modal button closed
+@include animationShowHide(show-btn-closed, 0, 0.5, 1);
+@include animationShowHide(hide-btn-closed, 1, 0.5, 0.2);

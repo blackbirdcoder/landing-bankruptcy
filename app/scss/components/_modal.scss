@@ -1,0 +1,48 @@
+.modal {
+  margin: 0;
+  padding: 10px 0;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: fade-out($swatch_9, 0.2);
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  &__box-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    overflow: hidden;
+    display: inline-block;
+    animation: show-btn-closed 0.4s ease-in;
+    opacity: 1;
+    pointer-events: auto;
+  }
+  &__box-content {
+    margin: 10px;
+    max-width: 420px;
+    background-color: $swatch_2;
+    box-shadow: 0 0 3px 1px $swatch_20;
+  }
+}
+.js-modal-open {
+  display: flex;
+  animation: show-window 0.2s ease-in;
+  opacity: 1;
+}
+
+.js-modal-closed {
+  animation: hide-window 0.2s ease-in;
+  opacity: 0;
+}
+
+.js-button-hide {
+  animation: hide-btn-closed 0.1s ease-in;
+  opacity: 0;
+  pointer-events: none;
+}
