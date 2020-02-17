@@ -175,20 +175,3 @@ button:active,
   margin: 0 auto;
   padding: 0 15px;
 }
-
-// animation color marker
-@include animationColor(marker-anim, $swatch_1, $swatch_16);
-
-//animation color number phone
-@include animationColor(signs-anim, $swatch_0, $swatch_16);
-
-//animation arrow down
-@include animationMoving(arrow-down, top, -7);
-
-//animation modal window
-@include animationShowHide(show-window, 0.3, 0.8, 1);
-@include animationShowHide(hide-window, 1, 0.8, 0);
-
-//animation modal button closed
-@include animationShowHide(show-btn-closed, 0, 0.5, 1);
-@include animationShowHide(hide-btn-closed, 1, 0.5, 0.2);

@@ -59,7 +59,14 @@
     padding-right: 15px;
     color: $swatch_1;
     font-size: 20px;
-    animation: marker-anim 3s ease-in-out infinite;
+    @include animationColor(
+      marker-anim,
+      $swatch_1,
+      $swatch_16,
+      3s,
+      ease-in-out,
+      infinite
+    );
   }
   &__txt {
     font-size: 15px;
@@ -83,7 +90,14 @@
       }
     }
     &_animation-color {
-      animation: signs-anim 3s ease-in-out infinite;
+      @include animationColor(
+        signs-anim,
+        $swatch_0,
+        $swatch_16,
+        3s,
+        ease-in-out,
+        infinite
+      );
     }
   }
 

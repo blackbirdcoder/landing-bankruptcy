@@ -19,7 +19,7 @@
     right: 20px;
     overflow: hidden;
     display: inline-block;
-    animation: show-btn-closed 0.4s ease-in;
+    @include animationShowHide(show-btn-closed, 0, 0.5, 1, 0.4s, ease-in);
     opacity: 1;
     pointer-events: auto;
   }
@@ -32,17 +32,17 @@
 }
 .js-modal-open {
   display: flex;
-  animation: show-window 0.2s ease-in;
+  @include animationShowHide(show-window, 0.3, 0.8, 1, 0.2s, ease-in);
   opacity: 1;
 }
 
 .js-modal-closed {
-  animation: hide-window 0.2s ease-in;
+  @include animationShowHide(hide-window, 1, 0.8, 0, 0.2s, ease-in);
   opacity: 0;
 }
 
 .js-button-hide {
-  animation: hide-btn-closed 0.1s ease-in;
+  @include animationShowHide(hide-btn-closed, 1, 0.5, 0.2, 0.1s, ease-in);
   opacity: 0;
   pointer-events: none;
 }

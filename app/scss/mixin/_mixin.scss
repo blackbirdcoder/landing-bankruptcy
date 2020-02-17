@@ -1,5 +1,5 @@
 // animation
-@mixin animationColor($name, $color1, $color2) {
+@mixin animationColor($name, $color1, $color2, $duration, $animFunc, $count) {
   @keyframes #{$name} {
     0% {
       color: $color1;
@@ -23,10 +23,21 @@
       color: $color1;
     }
   }
+  animation: #{$name};
+  animation-duration: #{$duration};
+  animation-timing-function: #{$animFunc};
+  animation-iteration-count: #{$count};
 }
 
 // It is recommended that the element has absolute positioning.
-@mixin animationMoving($name, $direction, $numOffset) {
+@mixin animationMoving(
+  $name,
+  $direction,
+  $numOffset,
+  $duration,
+  $animFunc,
+  $count
+) {
   @keyframes #{$name} {
     0% {
       margin-#{$direction}: 0;
@@ -38,10 +49,21 @@
       margin-#{$direction}: 0;
     }
   }
+  animation: #{$name};
+  animation-duration: #{$duration};
+  animation-timing-function: #{$animFunc};
+  animation-iteration-count: #{$count};
 }
 
 //animation show window
-@mixin animationShowHide($name, $initial, $average, $final) {
+@mixin animationShowHide(
+  $name,
+  $initial,
+  $average,
+  $final,
+  $duration,
+  $animFunc
+) {
   @keyframes #{$name} {
     0% {
       opacity: $initial;
@@ -53,4 +75,7 @@
       opacity: $final;
     }
   }
+  animation: #{$name};
+  animation-duration: #{$duration};
+  animation-timing-function: #{$animFunc};
 }
