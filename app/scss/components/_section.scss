@@ -222,8 +222,12 @@
 // section finance
 .section-finance {
   &__box-content {
+    margin-bottom: 75px;
     position: relative;
     max-width: 1020px;
+    @media (min-width: $lg) {
+      margin-bottom: 100px;
+    }
   }
   &__box-text {
     margin-bottom: 35px;
@@ -301,5 +305,59 @@
     }
   }
   &__picture {
+  }
+}
+// section procedure
+.section-procedure {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  background-color: $swatch_8;
+  @media (min-width: $lg) {
+    padding-top: 75px;
+  }
+  @media (min-width: $xl) {
+    padding-top: 90px;
+  }
+  &__box-content {
+    text-align: center;
+  }
+  &__box-content-top {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 50px;
+    max-width: 493px;
+    @media (min-width: $md) {
+      margin-bottom: 55px;
+    }
+    @media (min-width: $lg) {
+      margin-bottom: 65px;
+      max-width: 100%;
+    }
+    @media (min-width: $xl) {
+      margin-bottom: 72px;
+    }
+  }
+  &__heading {
+    font-size: 28px;
+    @media (min-width: $sm) {
+      font-size: 30px;
+    }
+    @media (min-width: $xl) {
+      font-size: 40px;
+    }
+  }
+  &__subheading {
+    font-size: 22px;
+    color: $swatch_1;
+    font-style: italic;
+    font-weight: bold;
+    @media (min-width: $sm) {
+      font-size: 24px;
+    }
+    @media (min-width: $xl) {
+      font-size: 31px;
+    }
+  }
+  &__box-card {
   }
 }

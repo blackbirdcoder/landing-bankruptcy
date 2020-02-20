@@ -49,3 +49,172 @@
     }
   }
 }
+// card-info
+.card-info {
+  max-width: 300px;
+  margin-right: auto;
+  margin-left: auto;
+  display: flex;
+  flex-direction: column;
+  @media (min-width: $md) {
+    max-width: 350px;
+    margin-bottom: 25px;
+    align-items: center;
+  }
+  @media (min-width: $lg) {
+    margin-bottom: 40px;
+  }
+  @media (min-width: $xl) {
+    max-width: 482px;
+    margin-bottom: 60px;
+    flex-direction: row;
+    text-align: left;
+  }
+  &_inner-position {
+    &_right {
+      @media (min-width: $lg) {
+        margin-right: 0;
+        margin-left: auto;
+      }
+      @media (min-width: $xl) {
+        margin-right: 6px;
+      }
+    }
+    &_left {
+      @media (min-width: $lg) {
+        margin-right: auto;
+        margin-left: 0;
+      }
+      @media (min-width: $xl) {
+        margin-left: 60px;
+      }
+    }
+    &_top {
+      @media (min-width: $xl) {
+        padding-top: 15px;
+      }
+    }
+    &_special-align {
+      @media (min-width: $xl) {
+        margin-top: 1px;
+        margin-right: 4px;
+      }
+    }
+  }
+  &_outer-position {
+    &_top-deep {
+      @media (min-width: $xl) {
+        margin-top: -20px;
+      }
+    }
+    &_top-small {
+      @media (min-width: $xl) {
+        margin-top: -10px;
+      }
+    }
+  }
+  &__box-content-top {
+  }
+  &__figure {
+    margin-bottom: 5px;
+    @media (min-width: $md) {
+      margin: 0;
+    }
+    &_inner-position {
+      &_left {
+        @media (min-width: $xl) {
+          padding-left: 12px;
+        }
+      }
+    }
+    &_outer-position {
+      &_bottom {
+        @media (min-width: $lg) {
+          position: relative;
+          bottom: -10px;
+        }
+        @media (min-width: $xl) {
+          position: static;
+        }
+      }
+    }
+  }
+  &__picture {
+    max-width: 145px;
+    max-height: 145px;
+    @media (min-width: $md) {
+      max-width: 165px;
+      max-height: 165px;
+    }
+    @media (min-width: $xl) {
+      max-width: 177px;
+      max-height: 177px;
+    }
+  }
+  &__box-content-bottom {
+    margin-bottom: 30px;
+    @media (min-width: $md) {
+      padding-left: 10px;
+      margin-bottom: 0;
+    }
+    @media (min-width: $xl) {
+      padding-left: 0;
+      position: relative;
+      top: 72px;
+      left: -6px;
+    }
+    &_inner-position {
+      &_top {
+        @media (min-width: $lg) {
+          padding-top: 10px;
+        }
+        @media (min-width: $xl) {
+          padding-top: 0;
+        }
+      }
+    }
+    &_outer-position {
+      &_top {
+        @media (min-width: $xl) {
+          margin-top: -15px;
+        }
+      }
+      &_left {
+        margin-left: -14px;
+      }
+    }
+  }
+  &__txt {
+    @extend .card-merit__txt;
+    display: inline;
+    font-size: 16px;
+    @media (min-width: $sm) {
+      font-size: 17px;
+    }
+    @media (min-width: $md) {
+      font-size: 18px;
+    }
+    @media (min-width: $xl) {
+      font-size: 19px;
+    }
+    &_bold {
+      @extend .card-merit__txt_bold;
+    }
+    &_inner-position {
+      display: block;
+      @media (min-width: $xl) {
+        display: inline;
+      }
+    }
+    &_md-inner-position {
+      @media (min-width: $md) {
+        display: block;
+      }
+    }
+    &_xl-inner-position {
+      @media (min-width: $xl) {
+        display: block;
+      }
+    }
+  }
+}
