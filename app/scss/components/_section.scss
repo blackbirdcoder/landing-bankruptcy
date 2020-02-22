@@ -317,6 +317,7 @@
   }
   @media (min-width: $xl) {
     padding-top: 90px;
+    padding-bottom: 61px;
   }
   &__box-content {
     text-align: center;
@@ -359,5 +360,94 @@
     }
   }
   &__box-card {
+  }
+}
+// section cost
+.section-cost {
+  padding-top: 90px;
+  padding-bottom: 50px;
+  min-height: 608px;
+  position: relative;
+  overflow: hidden;
+  &__box-content {
+    position: relative;
+    text-align: center;
+  }
+  &__box-content-top {
+    max-width: 350px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 35px;
+    @media (min-width: $lg) {
+      max-width: 100%;
+    }
+    @media (min-width: $xl) {
+      margin-bottom: 61px;
+      position: relative;
+      left: 8px;
+    }
+  }
+  &__heading {
+    font-size: 28px;
+    @media (min-width: $sm) {
+      font-size: 30px;
+    }
+    @media (min-width: $xl) {
+      font-size: 40px;
+    }
+  }
+  &__box-form {
+    @extend .section-finance__box-form;
+    @media (min-width: $lg) {
+      max-width: 600px;
+    }
+    @media (min-width: $xl) {
+      max-width: 812px;
+      position: relative;
+      left: 8px;
+    }
+    .form-feedback .form-feedback__box-field {
+      @media (min-width: $lg) {
+        margin-right: 15px;
+      }
+      @media (min-width: $xl) {
+        margin-right: 30px;
+      }
+    }
+    .form-feedback .form-feedback__footer .form-feedback__group {
+      @media (min-width: $lg) {
+        margin-bottom: 8px;
+      }
+    }
+    .form-feedback .form-feedback__footer {
+      @media (min-width: $lg) {
+        position: relative;
+        top: -16px;
+      }
+    }
+  }
+  &__box-figure {
+    display: none;
+    @media (min-width: $lg) {
+      display: block;
+      max-width: 380px;
+      position: absolute;
+      bottom: -108px;
+      right: -170px;
+      z-index: 2;
+    }
+    @media (min-width: $xl) {
+      max-width: 413px;
+      bottom: -102px;
+      right: -205px;
+    }
+  }
+  &__figure {
+    margin: 0;
+    max-width: 100%;
+    max-height: 502px;
+  }
+  &__picture {
+    display: block;
   }
 }

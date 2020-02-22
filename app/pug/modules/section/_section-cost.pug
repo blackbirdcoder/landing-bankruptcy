@@ -1,0 +1,13 @@
+section.section.section-cost
+  .container
+    .section-cost__box-content
+      .section-cost__box-content-top
+        h2.section-cost__heading Как узнать стоимость услуг?
+      .section-cost__box-form
+        -formFeedbackTitle = "Наш консультант свяжется с вами и бесплатно проанализирует"
+        -formFeedbackSubtitle = "ваш долговой портфель, чтобы определить цену услуг"
+        -formFeedbackBtnValue = "Получить инструкцию"
+        include ../form/_form-feedback
+      .section-cost__box-figure.wow.slideInRight(data-wow-offset="250")
+        figure.section-cost__figure
+          img.section-cost__picture(src="../img/femida.png", alt="femida")
