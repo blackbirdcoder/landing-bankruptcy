@@ -451,3 +451,35 @@
     display: block;
   }
 }
+// section serve
+.section-serve {
+  @media (min-width: $lg) {
+    padding-bottom: 13px;
+  }
+  @media (min-width: $xl) {
+    padding-top: 90px;
+    padding-bottom: 69px;
+  }
+  background-color: $swatch_8;
+  &__box-content-top {
+    @extend .section-cost__box-content-top;
+    text-align: center;
+    @media (min-width: $lg) {
+      margin-bottom: 99px;
+    }
+    @media (min-width: $xl) {
+      margin-bottom: 157px;
+    }
+  }
+  &__heading {
+    font-size: 28px;
+    @media (min-width: $sm) {
+      font-size: 30px;
+    }
+    @media (min-width: $xl) {
+      font-size: 40px;
+    }
+  }
+  &__box-card {
+  }
+}

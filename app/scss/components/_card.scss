@@ -218,3 +218,87 @@
     }
   }
 }
+// card feature
+.card-feature {
+  position: relative;
+  margin-bottom: 30px;
+  &__box-content-top {
+    margin-bottom: 10px;
+    @media (min-width: $xl) {
+      position: absolute;
+      top: -60px;
+      left: 6px;
+      z-index: 1;
+    }
+    &_outer-position {
+      &_left-small {
+        @media (min-width: $xl) {
+          left: 10px;
+        }
+      }
+      &_left-deep {
+        @media (min-width: $xl) {
+          left: 16px;
+        }
+      }
+    }
+  }
+  &__figure {
+    @extend .card-merit__figure;
+    width: 100px;
+    height: 100px;
+  }
+  &__picture {
+  }
+  &__box-content-bottom {
+    @extend .card-merit__box-content-bottom;
+    margin: 0 auto;
+    text-align: center;
+    @media (min-width: $xl) {
+      margin-left: 58px;
+      padding-left: 13px;
+      text-align: left;
+      position: relative;
+      z-index: 2;
+    }
+    &_outer-position {
+      &_left-small {
+        @media (min-width: $xl) {
+          left: 5px;
+        }
+      }
+      &_left-deep {
+        @media (min-width: $xl) {
+          left: 10px;
+        }
+      }
+    }
+  }
+  &__title {
+    margin-bottom: 10px;
+    font-size: 19px;
+    font-style: italic;
+    font-weight: bold;
+    @media (min-width: $sm) {
+      font-size: 20px;
+    }
+    @media (min-width: $md) {
+      font-size: 21px;
+    }
+    @media (min-width: $xl) {
+      margin-bottom: 16px;
+      font-size: 22px;
+    }
+  }
+  &__txt {
+    margin: 0;
+    font-size: 13px;
+    font-family: "Roboto";
+    line-height: 20px;
+    font-weight: 300;
+    color: $swatch_9;
+    @media (min-width: $sm) {
+      font-size: 14px;
+    }
+  }
+}
