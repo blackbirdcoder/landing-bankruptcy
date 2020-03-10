@@ -1,4 +1,5 @@
 /*slider*/
+// slider hero
 .slider-hero {
   @media (min-width: $lg) {
     position: relative;
@@ -51,24 +52,17 @@
   &__box-pagination
     > .swiper-pagination.swiper-pagination-bullets
     > .swiper-pagination-bullet {
-    background-color: $swatch_4;
-    transition: background-color 0.2s ease-in-out;
-    opacity: 1;
-    @media (min-width: $xl) {
-      width: 10px;
-      height: 10px;
-    }
+    @include paginationAppearance($swatch_4, $xl);
   }
   &__box-pagination
     > .swiper-pagination.swiper-pagination-bullets
     > .swiper-pagination-bullet:hover {
-    background-color: $swatch_16;
-    transition: background-color 0.8s ease-in-out;
+    @include paginationAppearanceHover($swatch_16);
   }
   &__box-pagination
     > .swiper-pagination.swiper-pagination-bullets
     > .swiper-pagination-bullet:nth-child(2) {
-    margin: 0 10px;
+    @include paginationAppearanceDistance(10, 10);
   }
   &__box-pagination > .swiper-pagination {
     position: static;
@@ -81,12 +75,170 @@
   &__box-pagination
     > .swiper-pagination.swiper-pagination-bullets
     > .swiper-pagination-bullet.swiper-pagination-bullet-active {
-    background: $swatch_1;
+    @include paginationAppearanceActive($swatch_1);
   }
   .swiper-slide {
     text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+}
+// slider step
+.slider-step {
+  position: relative;
+  &__content {
+    margin: 0 auto;
+    max-width: 565px;
+    min-height: 360px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    @media (min-width: $sm) {
+      min-height: 320px;
+    }
+    @media (min-width: $lg) {
+      max-width: 760px;
+      display: block;
+    }
+  }
+  &__box-text {
+    margin-bottom: 0;
+    text-align: center;
+    @media (min-width: $lg) {
+      margin-bottom: 50px;
+    }
+  }
+  &__title {
+    margin-bottom: 30px;
+    display: block;
+    font-size: 24px;
+    font-weight: bold;
+    font-style: italic;
+    width: 250px;
+    margin-right: auto;
+    margin-left: auto;
+    @media (min-width: $sm) {
+      width: auto;
+      line-height: 20px;
+    }
+    @media (min-width: $md) {
+      font-size: 25px;
+    }
+    @media (min-width: $lg) {
+      margin-bottom: 40px;
+      font-size: 28px;
+      line-height: 35px;
+    }
+    @media (min-width: $xl) {
+      font-size: 31px;
+      position: relative;
+      top: -3px;
+    }
+  }
+  &__txt {
+    display: block;
+    font-family: "Roboto";
+    font-size: 17px;
+    font-weight: 300;
+    line-height: 27px;
+    // add
+    @media (min-width: $sm) {
+      min-height: 105px;
+    }
+    @media (min-width: $md) {
+      font-size: 18px;
+    }
+    @media (min-width: $lg) {
+      font-size: 20px;
+    }
+    &_position {
+      @media (min-width: $lg) {
+        display: inline-block;
+      }
+    }
+  }
+  &__box-button {
+    padding-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .slider-step__button {
+      @media (min-width: $lg) {
+        width: 296px;
+        height: 65px;
+        text-align: center;
+      }
+    }
+    @media (min-width: $lg) {
+      margin-top: -14px;
+    }
+  }
+
+  &__control-panel {
+    display: none;
+    @media (min-width: $lg) {
+      display: block;
+      width: 100%;
+      height: 40px;
+      position: absolute;
+      top: 71px;
+      left: 0;
+      z-index: 1;
+      .button-arrow.icon-arrow-right {
+        position: absolute;
+        bottom: 14px;
+        right: 0;
+        z-index: 1000;
+        @media (min-width: $xl) {
+          right: -6px;
+        }
+      }
+      .button-arrow.icon-arrow-left {
+        @extend .button-arrow.icon-arrow-right;
+        left: 0;
+        @media (min-width: $xl) {
+          left: 6px;
+        }
+      }
+    }
+  }
+
+  &__box-pagination {
+    max-width: 150px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @media (min-width: $lg) {
+      display: none;
+    }
+  }
+  &__box-pagination
+    > .slider-step__pagination.swiper-pagination-bullets
+    > .swiper-pagination-bullet {
+    @include paginationAppearance($swatch_4, $xl);
+  }
+  &__box-pagination
+    > .slider-step__pagination.swiper-pagination-bullets
+    > .swiper-pagination-bullet:hover {
+    @include paginationAppearanceHover($swatch_16);
+  }
+  &__box-pagination
+    > .slider-step__pagination.swiper-pagination-bullets
+    > .swiper-pagination-bullet:nth-child(2n) {
+    @include paginationAppearanceDistance(10, 10);
+  }
+  &__box-pagination
+    > .slider-step__pagination.swiper-pagination-bullets
+    > .swiper-pagination-bullet:last-child {
+    margin-right: 0;
+  }
+  &__box-pagination
+    > .slider-step__pagination.swiper-pagination-bullets
+    > .swiper-pagination-bullet.swiper-pagination-bullet-active {
+    @include paginationAppearanceActive($swatch_1);
+  }
+  &__pagination {
   }
 }

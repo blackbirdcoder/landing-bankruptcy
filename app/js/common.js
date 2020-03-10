@@ -16,7 +16,10 @@ document.addEventListener("DOMContentLoaded", () => {
       clickable: true
     },
     mousewheel: true,
-    keyboard: true,
+    keyboard: {
+      enabled: true,
+      onlyInViewport: true
+    },
     autoplay: {
       delay: 8000,
       disableOnInteraction: false
@@ -35,6 +38,30 @@ document.addEventListener("DOMContentLoaded", () => {
         this.el.addEventListener("mouseleave", () => {
           this.autoplay.start();
         });
+      }
+    }
+  });
+  // slider-step
+  var swiperStep = new Swiper("#swiperContainerSliderStep", {
+    cssMode: true,
+    loop: false,
+    slideClass: "swiper-slide.slider-step__slide",
+    navigation: {
+      nextEl: ".slider-step-button-next",
+      prevEl: ".slider-step-button-prev"
+    },
+    pagination: {
+      el: ".slider-step__pagination",
+      clickable: true
+    },
+    mousewheel: true,
+    keyboard: {
+      enabled: true,
+      onlyInViewport: true
+    },
+    on: {
+      slideChange: function() {
+        infographicsActive();
       }
     }
   });
@@ -123,9 +150,70 @@ document.addEventListener("DOMContentLoaded", () => {
       clearListeners();
     }
   };
+  // --- infographics card animations ---
+  const timeCompletion = 800;
+  const timeLeaving = 900;
+  let playAnimation = elem => {
+    window.removeEventListener("scroll", infographicsInSight);
+    for (let i = 1; i < elem.length; i++) {
+      setTimeout(() => {
+        elem[i].classList.add("js-bg-color-animation");
+        setTimeout(() => {
+          elem[i].classList.remove("js-bg-color-animation");
+        }, timeLeaving);
+      }, timeCompletion * i);
+    }
+  };
+  let infographicsInSight = () => {
+    let igCard = document.getElementsByClassName("card-infographics");
+    if (
+      document.documentElement.clientWidth >= 300 &&
+      document.documentElement.clientWidth < 960
+    ) {
+      if (document.scrollingElement.scrollTop > 4600) {
+        playAnimation(igCard);
+      }
+    } else if (
+      document.documentElement.clientWidth >= 960 &&
+      document.documentElement.clientWidth < 2230
+    ) {
+      if (document.scrollingElement.scrollTop > 3000) {
+        playAnimation(igCard);
+      }
+    } else if (document.documentElement.clientWidth >= 2230) {
+      if (document.scrollingElement.scrollTop > 2700) {
+        playAnimation(igCard);
+      }
+    }
+  };
+  window.addEventListener("scroll", infographicsInSight);
+  // ------------------------------------
+  // ----- infographics card active -----
+  let igCard = document.getElementsByClassName("card-infographics");
+  igCard[0].classList.add("js-bg-color-active");
+  function infographicsActive() {
+    const ACTIVESLIDE = swiperStep.activeIndex;
+    for (let i = 0; i < igCard.length; i++) {
+      if (igCard[i].classList.contains("js-bg-color-active")) {
+        igCard[i].classList.remove("js-bg-color-active");
+      }
+    }
+    igCard[ACTIVESLIDE].classList.add("js-bg-color-active");
+  }
+  // ------------------------------------
   // functions assistants
   function cssClassReplace(elem, cssAddClass, cssRemoveClass) {
     elem.classList.add(cssAddClass);
     elem.classList.remove(cssRemoveClass);
   }
+  // function addId(elem, nameId) {
+  //   for (let i = 0; i < elem.length; i++) {
+  //     elem[i].id = `${nameId}-${i + 1}`;
+  //   }
+  // }
+  // function addAttributeNumber(elem, att) {
+  //   for (let i = 0; i < elem.length; i++) {
+  //     elem[i].setAttribute(att, i + 1);
+  //   }
+  // }
 });

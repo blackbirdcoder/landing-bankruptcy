@@ -48,11 +48,19 @@
   color: $swatch_4;
   transition: 0.2s ease-in-out;
   cursor: pointer;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   &_bold.icon-arrow-big-right {
     font-size: 25px;
   }
   &_bold.icon-arrow-big-left {
     @extend .button-arrow_bold.icon-arrow-big-right;
+  }
+  &_slim.icon-arrow-right {
+    font-size: 40px;
+    width: 22px;
+  }
+  &_slim.icon-arrow-left {
+    @extend .button-arrow_slim.icon-arrow-right;
   }
   &:hover {
     color: $swatch_1;

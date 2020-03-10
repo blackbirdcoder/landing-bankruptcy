@@ -453,6 +453,8 @@
 }
 // section serve
 .section-serve {
+  position: relative;
+  z-index: -1;
   @media (min-width: $lg) {
     padding-bottom: 13px;
   }
@@ -481,5 +483,98 @@
     }
   }
   &__box-card {
+  }
+}
+// section step
+.section-step {
+  @media (min-width: $lg) {
+    margin-bottom: 80px;
+  }
+  &__wrap {
+    position: relative;
+  }
+  &__box-text {
+    @extend .section-cost__box-content-top;
+    margin-bottom: 50px;
+    text-align: center;
+    @media (min-width: $md) {
+      max-width: 450px;
+    }
+    @media (min-width: $lg) {
+      max-width: 550px;
+      margin-bottom: 80px;
+      position: relative;
+      top: -10px;
+    }
+    @media (min-width: $xl) {
+      max-width: 100%;
+    }
+  }
+  &__heading {
+    @extend .section-procedure__heading;
+    @media (min-width: $lg) {
+      margin-bottom: 24px;
+    }
+  }
+  &__subheading {
+    @extend .section-procedure__subheading;
+    @media (min-width: $lg) {
+      display: block;
+      margin: 0 auto;
+      width: 600px;
+    }
+    &_position {
+      @media (min-width: $md) {
+        display: block;
+        margin-top: 8px;
+      }
+    }
+  }
+  &__box-figure {
+    display: none;
+    @media (min-width: $lg) {
+      display: block;
+      position: absolute;
+      top: -160px;
+      left: -222px;
+      z-index: -1;
+    }
+    @media (min-width: $xl) {
+      top: -217px;
+      left: -266px;
+    }
+    @media (min-width: $xxl) {
+      left: -385px;
+    }
+  }
+  &__figure {
+    margin: 0;
+    max-width: 445px;
+    max-height: 100%;
+    @media (min-width: $xl) {
+      max-width: 475px;
+    }
+    @media (min-width: $xxl) {
+      max-width: 100%;
+    }
+  }
+  &__picture {
+  }
+  &__box-infographics {
+    margin-top: 0;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 50px;
+    max-width: 561px;
+    @media (min-width: $lg) {
+      max-width: 850px;
+      margin-bottom: 87px;
+    }
+    @media (min-width: $xl) {
+      margin-bottom: 84px;
+    }
+  }
+  &__slider-step {
+    margin-bottom: 50px;
   }
 }

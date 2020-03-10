@@ -1,26 +1,34 @@
 // animation
-@mixin animationColor($name, $color1, $color2, $duration, $animFunc, $count) {
+@mixin animationColor(
+  $name,
+  $property,
+  $color1,
+  $color2,
+  $duration,
+  $animFunc,
+  $count
+) {
   @keyframes #{$name} {
     0% {
-      color: $color1;
+      #{$property}: $color1;
     }
     25% {
-      color: $color1;
+      #{$property}: $color1;
     }
     35% {
-      color: $color2;
+      #{$property}: $color2;
     }
     50% {
-      color: $color2;
+      #{$property}: $color2;
     }
     75% {
-      color: $color2;
+      #{$property}: $color2;
     }
     85% {
-      color: $color1;
+      #{$property}: $color1;
     }
     100% {
-      color: $color1;
+      #{$property}: $color1;
     }
   }
   animation: #{$name};
@@ -78,4 +86,28 @@
   animation: #{$name};
   animation-duration: #{$duration};
   animation-timing-function: #{$animFunc};
+}
+
+// pagination appearance
+@mixin paginationAppearance($color, $brakePoint) {
+  background-color: $swatch_4;
+  transition: background-color 0.2s ease-in-out;
+  opacity: 1;
+  @media (min-width: $brakePoint) {
+    width: 10px;
+    height: 10px;
+  }
+}
+@mixin paginationAppearanceHover($color) {
+  background-color: $color;
+  transition: background-color 0.8s ease-in-out;
+}
+@mixin paginationAppearanceDistance($RightDistance, $LeftDistance) {
+  margin-top: 0;
+  margin-right: #{$RightDistance}px;
+  margin-bottom: 0;
+  margin-left: #{$LeftDistance}px;
+}
+@mixin paginationAppearanceActive($color) {
+  background: $color;
 }

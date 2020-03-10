@@ -61,6 +61,7 @@
     font-size: 20px;
     @include animationColor(
       marker-anim,
+      color,
       $swatch_1,
       $swatch_16,
       3s,
@@ -92,6 +93,7 @@
     &_animation-color {
       @include animationColor(
         signs-anim,
+        color,
         $swatch_0,
         $swatch_16,
         3s,
