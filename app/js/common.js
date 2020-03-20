@@ -39,10 +39,13 @@ document.addEventListener("DOMContentLoaded", () => {
           this.autoplay.start();
         });
       }
+      // slideChange: function() {
+      //   sliderArrowDisabled("slider-hero__control-panel", swiperHero, 0, 2);
+      // }
     }
   });
   // slider-step
-  var swiperStep = new Swiper("#swiperContainerSliderStep", {
+  let swiperStep = new Swiper("#swiperContainerSliderStep", {
     cssMode: true,
     loop: false,
     slideClass: "swiper-slide.slider-step__slide",
@@ -62,6 +65,37 @@ document.addEventListener("DOMContentLoaded", () => {
     on: {
       slideChange: function() {
         infographicsActive();
+        sliderArrowDisabled("slider-step__control-panel", swiperStep, 0, 7);
+      }
+    }
+  });
+  // slider-work
+  let swiperWork = new Swiper("#swiperContainerSliderWork", {
+    cssMode: false,
+    slidesPerView: 1,
+    spaceBetween: 0,
+    loop: false,
+    slideClass: "swiper-slide.slider-work__slide",
+    navigation: {
+      nextEl: ".slider-work-button-next",
+      prevEl: ".slider-work-button-prev"
+    },
+    pagination: {
+      el: ".slider-work__pagination",
+      clickable: true
+    },
+    mousewheel: false,
+    keyboard: {
+      enabled: false // true
+    },
+    breakpoints: {
+      960: {
+        slidesPerView: 3
+      }
+    },
+    on: {
+      slideChange: function() {
+        sliderArrowDisabled("slider-work__control-panel", swiperWork, 0, 3);
       }
     }
   });
@@ -150,6 +184,11 @@ document.addEventListener("DOMContentLoaded", () => {
       clearListeners();
     }
   };
+
+  //--- slider hero arrow disabled ---
+  // sliderArrowDisabled("slider-hero__control-panel", swiperHero, 0, 2);
+  // ---------------------------------
+
   // --- infographics card animations ---
   const timeCompletion = 800;
   const timeLeaving = 900;
@@ -201,19 +240,66 @@ document.addEventListener("DOMContentLoaded", () => {
     igCard[ACTIVESLIDE].classList.add("js-bg-color-active");
   }
   // ------------------------------------
+  //---- slider step arrow disabled -----
+  sliderArrowDisabled("slider-step__control-panel", swiperStep, 0, 8);
+  // ------------------------------------
+  // --- slider work hover effects ---
+  let sliderWrkLink = document.getElementsByClassName("slider-work__link");
+  let showOverlayClick = event => {
+    event.target.classList.add("js-show-overlay");
+    setTimeout(function() {
+      event.target.classList.remove("js-show-overlay");
+    }, 300);
+    if (event.target.classList.contains("js-hide-overlay")) {
+      event.target.classList.remove("js-hide-overlay");
+    }
+  };
+  let showOverlayOver = event => {
+    if (!event.target.classList.contains("js-show-overlay")) {
+      event.target.classList.add("js-show-overlay");
+    }
+    if (event.target.classList.contains("js-hide-overlay")) {
+      event.target.classList.remove("js-hide-overlay");
+    }
+  };
+  let showOverlayOut = event => {
+    if (event.target.classList.contains("js-show-overlay")) {
+      event.target.classList.remove("js-show-overlay");
+      event.target.classList.add("js-hide-overlay");
+    }
+  };
+  for (let i = 0; i < sliderWrkLink.length; i++) {
+    sliderWrkLink[i].addEventListener("click", showOverlayClick);
+    sliderWrkLink[i].addEventListener("mouseover", showOverlayOver);
+    sliderWrkLink[i].addEventListener("mouseout", showOverlayOut);
+  }
+  // ---------------------
+  //-- slider work arrow disabled --
+  sliderArrowDisabled("slider-work__control-panel", swiperWork, 0, 3);
+  // -------------------------------
+
   // functions assistants
   function cssClassReplace(elem, cssAddClass, cssRemoveClass) {
     elem.classList.add(cssAddClass);
     elem.classList.remove(cssRemoveClass);
   }
-  // function addId(elem, nameId) {
-  //   for (let i = 0; i < elem.length; i++) {
-  //     elem[i].id = `${nameId}-${i + 1}`;
-  //   }
-  // }
-  // function addAttributeNumber(elem, att) {
-  //   for (let i = 0; i < elem.length; i++) {
-  //     elem[i].setAttribute(att, i + 1);
-  //   }
-  // }
+  // For Sliders
+  // Turn off arrow at end of slide
+  // suitable for all sliders
+  function sliderArrowDisabled(panel, slider, numLeft, numRight) {
+    let controlPanel = document.getElementsByClassName(panel)[0].children;
+    let arrowRight = controlPanel[0];
+    let arrowLeft = controlPanel[1];
+    const ACTIVESLIDE = slider.activeIndex;
+    if (ACTIVESLIDE == numLeft) {
+      arrowLeft.classList.add("js-arrow-disabled");
+    } else if (ACTIVESLIDE > numLeft && ACTIVESLIDE < numRight) {
+      arrowLeft.classList.remove("js-arrow-disabled");
+    } else if (ACTIVESLIDE == numRight) {
+      arrowRight.classList.add("js-arrow-disabled");
+    }
+    if (ACTIVESLIDE < numRight) {
+      arrowRight.classList.remove("js-arrow-disabled");
+    }
+  }
 });

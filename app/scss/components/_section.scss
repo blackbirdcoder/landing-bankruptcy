@@ -488,7 +488,7 @@
 // section step
 .section-step {
   @media (min-width: $lg) {
-    margin-bottom: 80px;
+    margin-bottom: 62px; //80
   }
   &__wrap {
     position: relative;
@@ -576,5 +576,70 @@
   }
   &__slider-step {
     margin-bottom: 50px;
+  }
+}
+// section work
+.section-work {
+  background-color: $swatch_8;
+  padding-bottom: 30px; // 62
+  @media (min-width: $lg) {
+    padding-bottom: 0;
+  }
+  &__wrap {
+    @extend .section-step__wrap;
+  }
+  &__box-figure {
+    display: none;
+    @media (min-width: $lg) {
+      display: block;
+      position: absolute;
+      top: -222px;
+      right: -136px;
+      z-index: 1;
+    }
+    @media (min-width: $xl) {
+      right: -189px;
+    }
+  }
+  &__figure {
+    margin: 0;
+    max-width: 243px;
+    max-height: 100%;
+  }
+  &__picture {
+  }
+  &__box-text {
+    @extend .section-step__box-text;
+    @media (min-width: $md) {
+      max-width: 100%;
+    }
+    @media (min-width: $lg) {
+      margin-bottom: 67px;
+    }
+  }
+  &__heading {
+    @extend .section-step__heading;
+    @media (min-width: $lg) {
+      margin-bottom: 17px;
+    }
+  }
+  &__subheading {
+    @extend .section-step__subheading;
+    @media (min-width: $md) {
+      display: block;
+      margin: 0 auto;
+      width: 370px;
+    }
+    @media (min-width: $xl) {
+      width: auto;
+    }
+  }
+  &__slider-work {
+    max-width: 100%; // 930
+    width: 100%; // 300
+    margin: 0 auto;
+    @media (min-width: $lg) {
+      width: auto; // auto // 900
+    }
   }
 }
