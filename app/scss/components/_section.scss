@@ -488,7 +488,7 @@
 // section step
 .section-step {
   @media (min-width: $lg) {
-    margin-bottom: 62px; //80
+    margin-bottom: 62px;
   }
   &__wrap {
     position: relative;
@@ -581,7 +581,7 @@
 // section work
 .section-work {
   background-color: $swatch_8;
-  padding-bottom: 30px; // 62
+  padding-bottom: 30px;
   @media (min-width: $lg) {
     padding-bottom: 0;
   }
@@ -635,11 +635,80 @@
     }
   }
   &__slider-work {
-    max-width: 100%; // 930
-    width: 100%; // 300
+    max-width: 100%;
+    width: 100%;
     margin: 0 auto;
     @media (min-width: $lg) {
-      width: auto; // auto // 900
+      width: auto;
     }
+  }
+}
+
+// section guarantees
+.section-guarantees {
+  @extend .section-cost;
+  padding-top: 100px;
+  min-height: 414px;
+  @media (min-width: $lg) {
+    min-height: 614px;
+  }
+  &__box-content {
+    position: relative;
+  }
+  &__box-content-top {
+    @extend .section-cost__box-content;
+    margin-bottom: 35px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 400px;
+    @media (min-width: $md) {
+      max-width: 500px;
+    }
+    @media (min-width: $lg) {
+      max-width: 100%;
+    }
+    @media (min-width: $xl) {
+      margin-bottom: 58px;
+    }
+  }
+  &__heading {
+    @extend .section-cost__heading;
+  }
+  &__box-form {
+    @extend .section-cost__box-form;
+  }
+  &__box-form .form-feedback .form-feedback__box-button .button_font {
+    position: relative;
+    z-index: 3;
+  }
+  &__box-form
+    .form-feedback
+    .form-feedback__box-checkbox
+    .form-feedback__txt-checkbox
+    .form-feedback__link {
+    position: relative;
+    z-index: 3;
+  }
+  &__box-figure {
+    display: none;
+    @media (min-width: $lg) {
+      display: block;
+      max-width: 426px;
+      max-height: 302px;
+      position: absolute;
+      top: 213px;
+      right: -101px;
+      z-index: 2;
+    }
+    @media (min-width: $xl) {
+      right: -117px;
+    }
+  }
+  &__figure {
+    margin: 0;
+    max-width: 100%;
+  }
+  &__picture {
+    display: block;
   }
 }
