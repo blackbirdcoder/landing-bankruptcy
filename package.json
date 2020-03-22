@@ -35,6 +35,7 @@
   "dependencies": {
     "animate.css": "^3.7.2",
     "jquery": "^3.4.1",
+    "leaflet": "^1.6.0",
     "normalize.css": "^8.0.1",
     "swiper": "^5.2.1",
     "wowjs": "^1.1.3"

@@ -40,7 +40,8 @@ gulp.task("css-libs", () => {
     .src([
       "node_modules/normalize.css/normalize.css",
       "node_modules/swiper/css/swiper.css",
-      "node_modules/animate.css/animate.css"
+      "node_modules/animate.css/animate.css",
+      "node_modules//leaflet/dist/leaflet.css"
     ])
     .pipe(concat("_libs.scss"))
     .pipe(gulp.dest("app/scss/libs"))
@@ -76,7 +77,8 @@ gulp.task("js-libs", () => {
     .src([
       "node_modules/jquery/dist/jquery.js",
       "node_modules/swiper/js/swiper.js",
-      "node_modules/wowjs/dist/wow.js"
+      "node_modules/wowjs/dist/wow.js",
+      "node_modules//leaflet/dist/leaflet.js"
     ])
     .pipe(concat("libs-min.js"))
     .pipe(uglify())
