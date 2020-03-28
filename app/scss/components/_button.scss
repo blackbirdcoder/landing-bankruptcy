@@ -106,3 +106,26 @@
     right: 0;
   }
 }
+
+.button-map {
+  width: 45px;
+  height: 45px;
+  background-color: $swatch_2;
+  border-radius: 50px;
+  border: 0;
+  opacity: 0.7;
+  cursor: pointer;
+  &:hover {
+    opacity: 1;
+  }
+  &_picture {
+    background-image: url("../img/map-target.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 65%;
+  }
+  &_outer-position {
+    position: absolute;
+    top: -64px;
+  }
+}

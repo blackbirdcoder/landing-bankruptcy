@@ -277,7 +277,62 @@ document.addEventListener("DOMContentLoaded", () => {
   //-- slider work arrow disabled --
   sliderArrowDisabled("slider-work__control-panel", swiperWork, 0, 3);
   // -------------------------------
+  // ---- Map City ----
+  let mapCity = L.map("mapCity").setView([64.540434, 40.569918], 16);
+  L.tileLayer(
+    "https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoidGVjaG5vbmluamEiLCJhIjoiY2s4MXN2ZGVmMHN2YTNlcnV3bWs2dnVuZCJ9.7p_rNlDWIVfE8dMSjw1gKw",
+    {
+      attribution:
+        'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+      maxZoom: 18,
+      minZoom: 14,
+      id: "mapbox/streets-v11",
+      tileSize: 512,
+      zoomOffset: -1,
+      accessToken: "your.mapbox.access.token"
+    }
+  ).addTo(mapCity);
+  let homeMadeIcon = L.icon({
+    iconUrl: "../img/map-marker.png",
+    iconSize: [27, 36],
+    iconAnchor: [13, 36]
+  });
+  L.marker([64.540572, 40.569671], {
+    icon: homeMadeIcon,
+    title: "Агентство по банкротству"
+  }).addTo(mapCity);
+  mapCity._handlers.forEach(function(handler) {
+    handler.disable();
+  });
+  mapCity.touchZoom.enable();
+  mapCity.zoomControl.setPosition("topright");
+  let createBtnTarget = L.control({
+    position: "topright"
+  });
+  createBtnTarget.onAdd = function(map) {
+    let createBtnTarget = L.DomUtil.create(
+      "button",
+      "button-map button-map_picture button-map_outer-position"
+    );
+    return createBtnTarget;
+  };
+  createBtnTarget.addTo(mapCity);
 
+  let targetBtn = document.querySelector(".button-map.button-map_picture");
+  targetBtn.setAttribute("title", "Target");
+  targetBtn.addEventListener("click", function() {
+    mapCity.setView([64.540572, 40.569671]);
+  });
+  let allowDraggingMap = () => {
+    if (document.documentElement.clientWidth >= 960) {
+      mapCity.dragging.enable();
+    } else if (document.documentElement.clientWidth < 960) {
+      mapCity.dragging.disable();
+    }
+  };
+  allowDraggingMap();
+  window.addEventListener("resize", allowDraggingMap);
+  // ------------------
   // functions assistants
   function cssClassReplace(elem, cssAddClass, cssRemoveClass) {
     elem.classList.add(cssAddClass);

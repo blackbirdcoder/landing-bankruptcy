@@ -703,6 +703,9 @@
     @media (min-width: $xl) {
       right: -117px;
     }
+    @media (min-width: $ultra) {
+      top: 240px;
+    }
   }
   &__figure {
     margin: 0;
@@ -710,5 +713,170 @@
   }
   &__picture {
     display: block;
+  }
+}
+// section address
+.section-address {
+  position: relative;
+  padding-top: 40px;
+  @media (min-width: $lg) {
+    padding-top: 0;
+  }
+  &__box-text {
+    max-width: 400px;
+    height: 100px;
+    position: absolute;
+    top: 60px;
+    left: 50%;
+    right: 50%;
+    margin-right: -150px;
+    margin-left: -150px;
+    text-align: center;
+    z-index: 1000;
+    @media (min-width: $lg) {
+      top: 75px;
+    }
+  }
+  &__contact {
+    position: relative;
+    &:after {
+      content: "";
+      display: block;
+      width: 170px;
+      height: 170px;
+      position: absolute;
+      top: -17%;
+      left: 50%;
+      margin-left: -85px;
+      border-radius: 50%;
+      box-shadow: 0 0 41px 60px $swatch_2;
+      background-color: $swatch_2;
+      z-index: -1;
+      @media (min-width: $md) {
+        box-shadow: 0 0 46px 73px $swatch_2;
+      }
+      @media (min-width: $lg) {
+        box-shadow: 0 0 45px 75px $swatch_2;
+      }
+    }
+  }
+  &__title {
+    display: block;
+    margin-bottom: 20px;
+    font-family: "Tinos";
+    font-size: 22px;
+    font-weight: bold;
+    font-style: italic;
+    color: $swatch_1;
+    @media (min-width: $md) {
+      font-size: 24px;
+    }
+    @media (min-width: $lg) {
+      margin-bottom: 39px;
+      font-size: 25px;
+    }
+  }
+  &__txt {
+  }
+  &__link {
+    display: block;
+    margin-top: 19px;
+    text-decoration: none;
+    transition: 0.3s;
+    &:hover {
+      color: $swatch_16;
+    }
+  }
+  &__txt {
+    display: block;
+    font-family: "Roboto";
+    font-size: 14px;
+    font-weight: 300;
+    @media (min-width: $lg) {
+      font-size: 17px;
+    }
+    &_big {
+      font-weight: 500;
+    }
+  }
+  &__box-map {
+  }
+  &__box-form {
+    max-width: 323px;
+    height: 100px;
+    position: absolute;
+    top: 517px;
+    left: 50%;
+    right: 50%;
+    margin-right: -161px;
+    margin-left: -161px;
+    z-index: 1000;
+    @media (min-width: $sm) {
+      max-width: 435px;
+      margin-right: -215px;
+      margin-left: -215px;
+    }
+    @media (min-width: $md) {
+      top: 486px;
+      max-width: 590px;
+      margin-right: -295px;
+      margin-left: -295px;
+    }
+    @media (min-width: $lg) {
+      top: 447px;
+    }
+    @media (min-width: $xl) {
+      max-width: 880px;
+      margin-right: -413px;
+      margin-left: -399px;
+    }
+    .form-feedback {
+      padding-top: 0;
+      border-color: $swatch_2;
+      background-color: $swatch_2;
+      .form-feedback__box-field {
+        margin-right: 15px;
+      }
+    }
+    .form-feedback__subtitle {
+      font-size: 16px;
+      @media (min-width: $lg) {
+        font-size: 18px;
+      }
+      @media (min-width: $xl) {
+        position: absolute;
+        width: 198px;
+        text-align: left;
+        top: 56px;
+        left: 52px;
+      }
+    }
+    .form-feedback__group {
+      @media (min-width: $xl) {
+        position: relative;
+        top: 15px;
+        left: 122px;
+      }
+    }
+    .form-feedback__field {
+      @media (min-width: $xl) {
+        position: relative;
+        left: -10px;
+      }
+    }
+    .form-feedback__box-checkbox {
+      @media (min-width: $xl) {
+        top: -22px;
+        left: -76px;
+      }
+    }
+    .form-feedback__txt-checkbox {
+      @media (min-width: $xl) {
+        font-size: 11px;
+      }
+    }
+    .form-feedback__txt-inform {
+      display: none;
+    }
   }
 }
