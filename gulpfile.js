@@ -182,5 +182,7 @@ gulp.task("build", ["scss", "pug", "html-valid", "tingpng"], () => {
     buildVideo = gulp.src("app/video/**/*").pipe(gulp.dest("dist/video")),
     buildFavicon = gulp
       .src("app/img/favicon/*")
-      .pipe(gulp.dest("dist/img/favicon"));
+      .pipe(gulp.dest("dist/img/favicon")),
+    buildDocs = gulp.src("app/docs/**/*.pdf").pipe(gulp.dest("dist/docs")),
+    buildPolicy = gulp.src("app/policy/*.pdf").pipe(gulp.dest("dist/policy"));
 });
