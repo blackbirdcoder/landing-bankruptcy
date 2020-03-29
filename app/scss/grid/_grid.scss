@@ -30,4 +30,9 @@
       padding: 5px;
     }
   }
+  &_md-indent-inner {
+    @media (min-width: $md) {
+      padding: 6px;
+    }
+  }
 }

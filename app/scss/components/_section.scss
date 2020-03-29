@@ -830,7 +830,11 @@
       margin-right: -413px;
       margin-left: -399px;
     }
+    @media (min-width: $ultra) {
+      top: 398px;
+    }
     .form-feedback {
+      position: relative;
       padding-top: 0;
       border-color: $swatch_2;
       background-color: $swatch_2;
@@ -876,7 +880,22 @@
       }
     }
     .form-feedback__txt-inform {
-      display: none;
+      position: absolute;
+      top: 65px;
+      left: 41px;
+      visibility: hidden;
+      @media (min-width: $sm) {
+        top: 47px;
+        left: 95px;
+      }
+      @media (min-width: $md) {
+        top: 141px;
+        left: 193px;
+      }
+      @media (min-width: $xl) {
+        top: 15px;
+        left: 285px;
+      }
     }
   }
 }
