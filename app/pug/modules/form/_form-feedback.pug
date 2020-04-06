@@ -2,21 +2,21 @@
 //- formFeedbackTitle and formFeedbackSubtitle
 //- Point where the first include to the form
 //- Don't forget the variable formFeedbackBtnValue for the button name
-form.form-feedback(action="/" method="POST")
+form.form-feedback(name="formFeedback")
   .form-feedback__header
     span.form-feedback__title=formFeedbackTitle
     span.form-feedback__subtitle=formFeedbackSubtitle
   .form-feedback__group
     .form-feedback__box-field
-      input.form-feedback__field(type="tel" placeholder="Введите ваш телефон" autocomplete="off" maxlength="20")
+      input.form-feedback__field(type="tel" name="phone" pattern="^[0-9\\(\\)\\+\\-\\s]+$" placeholder="Введите ваш телефон" autocomplete="off" minlength="7" maxlength="20" title="Пример: +7 (818) 263-50-00" required)
     .form-feedback__box-button
-      input.button.button_middle.button_font(type="submit" value=formFeedbackBtnValue)
+      input.button.button_middle.button_font(type="submit" name="submit" value=formFeedbackBtnValue)
   .form-feedback__footer
     .form-feedback__box-inform
       span.form-feedback__txt-inform Мы перезвоним в течение 5 минут
     .form-feedback__group
       .form-feedback__box-checkbox
-        input.form-feedback__checkbox(type="checkbox" checked required)
+        input.form-feedback__checkbox(type="checkbox" name="checkbox" checked required)
         span.form-feedback__txt-checkbox Согласен с&nbsp;
           a.form-feedback__link(href="policy/policy.pdf" target="_blank") обработкой персональных данных
 

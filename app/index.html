@@ -47,21 +47,21 @@
                   <button class="button-close" id="btnCloseModal"></button>
                 </div>
                 <div class="modal__box-content">
-                  <form class="form-feedback" action="/" method="POST">
+                  <form class="form-feedback" name="formFeedback">
                     <div class="form-feedback__header"><span class="form-feedback__title">Мы свяжется с вами </span><span class="form-feedback__subtitle">чтобы обговорить финансовые проблемы</span></div>
                     <div class="form-feedback__group">
                       <div class="form-feedback__box-field">
-                        <input class="form-feedback__field" type="tel" placeholder="Введите ваш телефон" autocomplete="off" maxlength="20">
+                        <input class="form-feedback__field" type="tel" name="phone" pattern="^[0-9\(\)\+\-\s]+$" placeholder="Введите ваш телефон" autocomplete="off" minlength="7" maxlength="20" title="Пример: +7 (818) 263-50-00" required>
                       </div>
                       <div class="form-feedback__box-button">
-                        <input class="button button_middle button_font" type="submit" value="Перезвоните мне">
+                        <input class="button button_middle button_font" type="submit" name="submit" value="Перезвоните мне">
                       </div>
                     </div>
                     <div class="form-feedback__footer">
                       <div class="form-feedback__box-inform"><span class="form-feedback__txt-inform">Мы перезвоним в течение 5 минут</span></div>
                       <div class="form-feedback__group">
                         <div class="form-feedback__box-checkbox">
-                          <input class="form-feedback__checkbox" type="checkbox" checked required><span class="form-feedback__txt-checkbox">Согласен с&nbsp;<a class="form-feedback__link" href="policy/policy.pdf" target="_blank">обработкой персональных данных</a></span>
+                          <input class="form-feedback__checkbox" type="checkbox" name="checkbox" checked required><span class="form-feedback__txt-checkbox">Согласен с&nbsp;<a class="form-feedback__link" href="policy/policy.pdf" target="_blank">обработкой персональных данных</a></span>
                         </div>
                       </div>
                     </div>
@@ -159,21 +159,21 @@
                 </div>
                 <div class="grid__item width-1-1 width-1-2-lg">
                   <div class="section-finance__box-form">
-                    <form class="form-feedback" action="/" method="POST">
+                    <form class="form-feedback" name="formFeedback">
                       <div class="form-feedback__header"><span class="form-feedback__title">Получите бесплатно пошаговую инструкцию </span><span class="form-feedback__subtitle">по процедуре банкротства прямо сейчас:</span></div>
                       <div class="form-feedback__group">
                         <div class="form-feedback__box-field">
-                          <input class="form-feedback__field" type="tel" placeholder="Введите ваш телефон" autocomplete="off" maxlength="20">
+                          <input class="form-feedback__field" type="tel" name="phone" pattern="^[0-9\(\)\+\-\s]+$" placeholder="Введите ваш телефон" autocomplete="off" minlength="7" maxlength="20" title="Пример: +7 (818) 263-50-00" required>
                         </div>
                         <div class="form-feedback__box-button">
-                          <input class="button button_middle button_font" type="submit" value="Получить инструкцию">
+                          <input class="button button_middle button_font" type="submit" name="submit" value="Получить инструкцию">
                         </div>
                       </div>
                       <div class="form-feedback__footer">
                         <div class="form-feedback__box-inform"><span class="form-feedback__txt-inform">Мы перезвоним в течение 5 минут</span></div>
                         <div class="form-feedback__group">
                           <div class="form-feedback__box-checkbox">
-                            <input class="form-feedback__checkbox" type="checkbox" checked required><span class="form-feedback__txt-checkbox">Согласен с&nbsp;<a class="form-feedback__link" href="policy/policy.pdf" target="_blank">обработкой персональных данных</a></span>
+                            <input class="form-feedback__checkbox" type="checkbox" name="checkbox" checked required><span class="form-feedback__txt-checkbox">Согласен с&nbsp;<a class="form-feedback__link" href="policy/policy.pdf" target="_blank">обработкой персональных данных</a></span>
                           </div>
                         </div>
                       </div>
@@ -247,21 +247,21 @@
                 <h2 class="section-cost__heading">Как узнать стоимость услуг?</h2>
               </div>
               <div class="section-cost__box-form">
-                <form class="form-feedback" action="/" method="POST">
+                <form class="form-feedback" name="formFeedback">
                   <div class="form-feedback__header"><span class="form-feedback__title">Наш консультант свяжется с вами и бесплатно проанализирует</span><span class="form-feedback__subtitle">ваш долговой портфель, чтобы определить цену услуг</span></div>
                   <div class="form-feedback__group">
                     <div class="form-feedback__box-field">
-                      <input class="form-feedback__field" type="tel" placeholder="Введите ваш телефон" autocomplete="off" maxlength="20">
+                      <input class="form-feedback__field" type="tel" name="phone" pattern="^[0-9\(\)\+\-\s]+$" placeholder="Введите ваш телефон" autocomplete="off" minlength="7" maxlength="20" title="Пример: +7 (818) 263-50-00" required>
                     </div>
                     <div class="form-feedback__box-button">
-                      <input class="button button_middle button_font" type="submit" value="Получить инструкцию">
+                      <input class="button button_middle button_font" type="submit" name="submit" value="Получить инструкцию">
                     </div>
                   </div>
                   <div class="form-feedback__footer">
                     <div class="form-feedback__box-inform"><span class="form-feedback__txt-inform">Мы перезвоним в течение 5 минут</span></div>
                     <div class="form-feedback__group">
                       <div class="form-feedback__box-checkbox">
-                        <input class="form-feedback__checkbox" type="checkbox" checked required><span class="form-feedback__txt-checkbox">Согласен с&nbsp;<a class="form-feedback__link" href="policy/policy.pdf" target="_blank">обработкой персональных данных</a></span>
+                        <input class="form-feedback__checkbox" type="checkbox" name="checkbox" checked required><span class="form-feedback__txt-checkbox">Согласен с&nbsp;<a class="form-feedback__link" href="policy/policy.pdf" target="_blank">обработкой персональных данных</a></span>
                       </div>
                     </div>
                   </div>
@@ -516,21 +516,21 @@
                 <h2 class="section-guarantees__heading">Гарантируем положительный результат!</h2>
               </div>
               <div class="section-guarantees__box-form">
-                <form class="form-feedback" action="/" method="POST">
+                <form class="form-feedback" name="formFeedback">
                   <div class="form-feedback__header"><span class="form-feedback__title">Беремся за самые сложные дела</span><span class="form-feedback__subtitle">Получите бесплатно консультацию по своему вопросу</span></div>
                   <div class="form-feedback__group">
                     <div class="form-feedback__box-field">
-                      <input class="form-feedback__field" type="tel" placeholder="Введите ваш телефон" autocomplete="off" maxlength="20">
+                      <input class="form-feedback__field" type="tel" name="phone" pattern="^[0-9\(\)\+\-\s]+$" placeholder="Введите ваш телефон" autocomplete="off" minlength="7" maxlength="20" title="Пример: +7 (818) 263-50-00" required>
                     </div>
                     <div class="form-feedback__box-button">
-                      <input class="button button_middle button_font" type="submit" value="Получить инструкцию">
+                      <input class="button button_middle button_font" type="submit" name="submit" value="Получить инструкцию">
                     </div>
                   </div>
                   <div class="form-feedback__footer">
                     <div class="form-feedback__box-inform"><span class="form-feedback__txt-inform">Мы перезвоним в течение 5 минут</span></div>
                     <div class="form-feedback__group">
                       <div class="form-feedback__box-checkbox">
-                        <input class="form-feedback__checkbox" type="checkbox" checked required><span class="form-feedback__txt-checkbox">Согласен с&nbsp;<a class="form-feedback__link" href="policy/policy.pdf" target="_blank">обработкой персональных данных</a></span>
+                        <input class="form-feedback__checkbox" type="checkbox" name="checkbox" checked required><span class="form-feedback__txt-checkbox">Согласен с&nbsp;<a class="form-feedback__link" href="policy/policy.pdf" target="_blank">обработкой персональных данных</a></span>
                       </div>
                     </div>
                   </div>
@@ -552,21 +552,21 @@
             <div class="map" id="mapCity"></div>
           </div>
           <div class="section-address__box-form">
-            <form class="form-feedback" action="/" method="POST">
+            <form class="form-feedback" name="formFeedback">
               <div class="form-feedback__header"><span class="form-feedback__title"></span><span class="form-feedback__subtitle">Договориться о встрече на удобное для вас время:</span></div>
               <div class="form-feedback__group">
                 <div class="form-feedback__box-field">
-                  <input class="form-feedback__field" type="tel" placeholder="Введите ваш телефон" autocomplete="off" maxlength="20">
+                  <input class="form-feedback__field" type="tel" name="phone" pattern="^[0-9\(\)\+\-\s]+$" placeholder="Введите ваш телефон" autocomplete="off" minlength="7" maxlength="20" title="Пример: +7 (818) 263-50-00" required>
                 </div>
                 <div class="form-feedback__box-button">
-                  <input class="button button_middle button_font" type="submit" value="Получить инструкцию">
+                  <input class="button button_middle button_font" type="submit" name="submit" value="Получить инструкцию">
                 </div>
               </div>
               <div class="form-feedback__footer">
                 <div class="form-feedback__box-inform"><span class="form-feedback__txt-inform">Мы перезвоним в течение 5 минут</span></div>
                 <div class="form-feedback__group">
                   <div class="form-feedback__box-checkbox">
-                    <input class="form-feedback__checkbox" type="checkbox" checked required><span class="form-feedback__txt-checkbox">Согласен с&nbsp;<a class="form-feedback__link" href="policy/policy.pdf" target="_blank">обработкой персональных данных</a></span>
+                    <input class="form-feedback__checkbox" type="checkbox" name="checkbox" checked required><span class="form-feedback__txt-checkbox">Согласен с&nbsp;<a class="form-feedback__link" href="policy/policy.pdf" target="_blank">обработкой персональных данных</a></span>
                   </div>
                 </div>
               </div>
