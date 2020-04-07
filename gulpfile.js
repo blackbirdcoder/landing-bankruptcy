@@ -23,7 +23,7 @@ gulp.task("scss", () => {
       sass({ outputStyle: "compressed" }).on(
         "error",
         notify.onError({
-          title: "SCSS attention error!"
+          title: "SCSS attention error!",
         })
       )
     )
@@ -41,7 +41,7 @@ gulp.task("css-libs", () => {
       "node_modules/normalize.css/normalize.css",
       "node_modules/swiper/css/swiper.css",
       "node_modules/animate.css/animate.css",
-      "node_modules//leaflet/dist/leaflet.css"
+      "node_modules//leaflet/dist/leaflet.css",
     ])
     .pipe(concat("_libs.scss"))
     .pipe(gulp.dest("app/scss/libs"))
@@ -62,8 +62,8 @@ gulp.task("js-min", () => {
     .pipe(
       plumber({
         errorHandler: notify.onError({
-          title: "JAVASCRIPT attention error!"
-        })
+          title: "JAVASCRIPT attention error!",
+        }),
       })
     )
     .pipe(minify())
@@ -78,7 +78,7 @@ gulp.task("js-libs", () => {
       "node_modules/jquery/dist/jquery.js",
       "node_modules/swiper/js/swiper.js",
       "node_modules/wowjs/dist/wow.js",
-      "node_modules//leaflet/dist/leaflet.js"
+      "node_modules//leaflet/dist/leaflet.js",
     ])
     .pipe(concat("libs-min.js"))
     .pipe(uglify())
@@ -92,19 +92,19 @@ gulp.task("pug", () => {
     .pipe(
       plumber({
         errorHandler: notify.onError({
-          title: "PUG attention error!"
-        })
+          title: "PUG attention error!",
+        }),
       })
     )
     .pipe(
       pug({
-        pretty: true
+        pretty: true,
       })
     )
     .pipe(gulp.dest("app"))
     .pipe(
       browserSync.reload({
-        stream: true
+        stream: true,
       })
     );
 });
@@ -145,7 +145,7 @@ gulp.task("browser-sync", () => {
     baseDir: "app",
     port: 3001,
     open: true,
-    notify: false
+    notify: false,
   });
 });
 
@@ -160,7 +160,7 @@ gulp.task(
     "php",
     "js-min",
     "js-libs",
-    "img"
+    "img",
   ],
   () => {
     gulp.watch("app/scss/**/*.scss", ["scss"]);
