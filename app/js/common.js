@@ -9,23 +9,23 @@ document.addEventListener("DOMContentLoaded", () => {
     cssMode: true,
     navigation: {
       nextEl: ".slider-hero-button-next",
-      prevEl: ".slider-hero-button-prev"
+      prevEl: ".slider-hero-button-prev",
     },
     pagination: {
       el: ".swiper-pagination",
-      clickable: true
+      clickable: true,
     },
     mousewheel: true,
     keyboard: {
       enabled: true,
-      onlyInViewport: true
+      onlyInViewport: true,
     },
     autoplay: {
       delay: 8000,
-      disableOnInteraction: false
+      disableOnInteraction: false,
     },
     on: {
-      init: function() {
+      init: function () {
         let controlPanelSliderHero = document.querySelector(
           ".slider-hero__control-panel"
         );
@@ -38,11 +38,11 @@ document.addEventListener("DOMContentLoaded", () => {
         this.el.addEventListener("mouseleave", () => {
           this.autoplay.start();
         });
-      }
+      },
       // slideChange: function() {
       //   sliderArrowDisabled("slider-hero__control-panel", swiperHero, 0, 2);
       // }
-    }
+    },
   });
   // slider-step
   let swiperStep = new Swiper("#swiperContainerSliderStep", {
@@ -51,23 +51,23 @@ document.addEventListener("DOMContentLoaded", () => {
     slideClass: "swiper-slide.slider-step__slide",
     navigation: {
       nextEl: ".slider-step-button-next",
-      prevEl: ".slider-step-button-prev"
+      prevEl: ".slider-step-button-prev",
     },
     pagination: {
       el: ".slider-step__pagination",
-      clickable: true
+      clickable: true,
     },
     mousewheel: true,
     keyboard: {
       enabled: true,
-      onlyInViewport: true
+      onlyInViewport: true,
     },
     on: {
-      slideChange: function() {
+      slideChange: function () {
         infographicsActive();
         sliderArrowDisabled("slider-step__control-panel", swiperStep, 0, 7);
-      }
-    }
+      },
+    },
   });
   // slider-work
   let swiperWork = new Swiper("#swiperContainerSliderWork", {
@@ -78,26 +78,26 @@ document.addEventListener("DOMContentLoaded", () => {
     slideClass: "swiper-slide.slider-work__slide",
     navigation: {
       nextEl: ".slider-work-button-next",
-      prevEl: ".slider-work-button-prev"
+      prevEl: ".slider-work-button-prev",
     },
     pagination: {
       el: ".slider-work__pagination",
-      clickable: true
+      clickable: true,
     },
     mousewheel: false,
     keyboard: {
-      enabled: false // true
+      enabled: false, // true
     },
     breakpoints: {
       960: {
-        slidesPerView: 3
-      }
+        slidesPerView: 3,
+      },
     },
     on: {
-      slideChange: function() {
+      slideChange: function () {
         sliderArrowDisabled("slider-work__control-panel", swiperWork, 0, 3);
-      }
-    }
+      },
+    },
   });
   //-----------
 
@@ -134,7 +134,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let boxButton = document.querySelector(".modal__box-button");
   let input = document.querySelector(".form-feedback__field");
   let closedModal = () => {
-    setTimeout(function() {
+    setTimeout(function () {
       modalWindow.classList.remove("js-modal-open");
     }, 400);
     modalWindow.classList.add("js-modal-closed");
@@ -143,7 +143,7 @@ document.addEventListener("DOMContentLoaded", () => {
     window.removeEventListener("keydown", escapeClosedModal);
     input.removeEventListener("focus", hideButtonClosed);
   };
-  let escapeClosedModal = event => {
+  let escapeClosedModal = (event) => {
     let keyboardKey = event.code;
     if (keyboardKey === "Escape") {
       closedModal();
@@ -192,7 +192,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // --- infographics card animations ---
   const timeCompletion = 800;
   const timeLeaving = 900;
-  let playAnimation = elem => {
+  let playAnimation = (elem) => {
     window.removeEventListener("scroll", infographicsInSight);
     for (let i = 1; i < elem.length; i++) {
       setTimeout(() => {
@@ -245,16 +245,16 @@ document.addEventListener("DOMContentLoaded", () => {
   // ------------------------------------
   // --- slider work hover effects ---
   let sliderWrkLink = document.getElementsByClassName("slider-work__link");
-  let showOverlayClick = event => {
+  let showOverlayClick = (event) => {
     event.target.classList.add("js-show-overlay");
-    setTimeout(function() {
+    setTimeout(function () {
       event.target.classList.remove("js-show-overlay");
     }, 300);
     if (event.target.classList.contains("js-hide-overlay")) {
       event.target.classList.remove("js-hide-overlay");
     }
   };
-  let showOverlayOver = event => {
+  let showOverlayOver = (event) => {
     if (!event.target.classList.contains("js-show-overlay")) {
       event.target.classList.add("js-show-overlay");
     }
@@ -262,7 +262,7 @@ document.addEventListener("DOMContentLoaded", () => {
       event.target.classList.remove("js-hide-overlay");
     }
   };
-  let showOverlayOut = event => {
+  let showOverlayOut = (event) => {
     if (event.target.classList.contains("js-show-overlay")) {
       event.target.classList.remove("js-show-overlay");
       event.target.classList.add("js-hide-overlay");
@@ -289,27 +289,27 @@ document.addEventListener("DOMContentLoaded", () => {
       id: "mapbox/streets-v11",
       tileSize: 512,
       zoomOffset: -1,
-      accessToken: "your.mapbox.access.token"
+      accessToken: "your.mapbox.access.token",
     }
   ).addTo(mapCity);
   let homeMadeIcon = L.icon({
     iconUrl: "../img/map-marker.png",
     iconSize: [27, 36],
-    iconAnchor: [13, 36]
+    iconAnchor: [13, 36],
   });
   L.marker([64.540572, 40.569671], {
     icon: homeMadeIcon,
-    title: "Агентство по банкротству"
+    title: "Агентство по банкротству",
   }).addTo(mapCity);
-  mapCity._handlers.forEach(function(handler) {
+  mapCity._handlers.forEach(function (handler) {
     handler.disable();
   });
   mapCity.touchZoom.enable();
   mapCity.zoomControl.setPosition("topright");
   let createBtnTarget = L.control({
-    position: "topright"
+    position: "topright",
   });
-  createBtnTarget.onAdd = function(map) {
+  createBtnTarget.onAdd = function (map) {
     let createBtnTarget = L.DomUtil.create(
       "button",
       "button-map button-map_picture button-map_outer-position"
@@ -320,7 +320,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let targetBtn = document.querySelector(".button-map.button-map_picture");
   targetBtn.setAttribute("title", "Target");
-  targetBtn.addEventListener("click", function() {
+  targetBtn.addEventListener("click", function () {
     mapCity.setView([64.540572, 40.569671]);
   });
   let allowDraggingMap = () => {
@@ -332,6 +332,128 @@ document.addEventListener("DOMContentLoaded", () => {
   };
   allowDraggingMap();
   window.addEventListener("resize", allowDraggingMap);
+  // ------------------
+  //-----Work form-----
+  let formFeedback = document.querySelectorAll(".form-feedback");
+  let infoText = document.querySelectorAll(".form-feedback__txt-inform");
+  let checkboxConsent = document.querySelectorAll(".form-feedback__checkbox");
+  let inputPhone = document.querySelectorAll(".form-feedback__field");
+
+  infoText[4].setAttribute("data-info-hid", "hid");
+
+  let formDataProcessing = (event) => {
+    event.preventDefault();
+    let currentNumber = event.target.dataset.formNumber;
+    if (
+      checkboxConsent[currentNumber].checked &&
+      formFeedback[currentNumber].nodeName == "FORM"
+    ) {
+      let inputPhoneValue = inputPhone[currentNumber].value.trim();
+      let regex = /\d/g;
+      let phoneNumberArray = inputPhoneValue.match(regex);
+      if (phoneNumberArray !== null) {
+        let phoneNumberStr = phoneNumberArray.join("");
+        if (typeof phoneNumberStr === "string") {
+          let objJsonToSend = createObjToSend(phoneNumberStr);
+          let xhr = new XMLHttpRequest();
+          xhr.open("POST", "/backend/write-db.php");
+          xhr.setRequestHeader(
+            "Content-Type",
+            "application/x-www-form-urlencoded"
+          );
+          xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+              if (infoText[currentNumber].dataset.infoHid == "hid") {
+                showHiddenInfoText(
+                  infoText,
+                  currentNumber,
+                  inputPhone,
+                  "Идет регистрация вашего номера",
+                  "#f9a510"
+                );
+                showInfoTextDefaultTime(
+                  5000,
+                  infoText[currentNumber],
+                  "Мы перезвоним в течение 5 минут"
+                );
+              } else {
+                infoForm(
+                  infoText[currentNumber],
+                  "#f9a510",
+                  "Регистрация номера"
+                );
+                inputPhone[currentNumber].value = "";
+                showInfoTextDefaultTime(
+                  5000,
+                  infoText[currentNumber],
+                  "Мы перезвоним в течение 5 минут"
+                );
+              }
+              return true;
+            } else {
+              if (infoText[currentNumber].dataset.infoHid == "hid") {
+                showHiddenInfoText(
+                  infoText,
+                  currentNumber,
+                  inputPhone,
+                  "Неудача. Пробуйте пожалуйста ещё",
+                  "#ff0c0a"
+                );
+                return false;
+              } else {
+                infoForm(
+                  infoText[currentNumber],
+                  "#ff0c0a",
+                  "Попробуйте ещё раз"
+                );
+                return false;
+              }
+            }
+          };
+          xhr.send(objJsonToSend);
+        } else {
+          if (infoText[currentNumber].dataset.infoHid == "hid") {
+            showHiddenInfoText(
+              infoText,
+              currentNumber,
+              inputPhone,
+              "Произошла ошибка. Попробуйте ещё",
+              "#ff0c0a"
+            );
+            return false;
+          } else {
+            infoForm(
+              infoText[currentNumber],
+              "#ff0c0a",
+              "Ошибка. Попробуйте ещё"
+            );
+            return false;
+          }
+        }
+      } else {
+        if (infoText[currentNumber].dataset.infoHid == "hid") {
+          showHiddenInfoText(
+            infoText,
+            currentNumber,
+            inputPhone,
+            "Были указанны некорректные данные",
+            "#ff0c0a"
+          );
+          return false;
+        } else {
+          infoForm(infoText[currentNumber], "#ff0c0a", "Некорректные данные");
+          return false;
+        }
+      }
+    } else {
+      return false;
+    }
+  };
+
+  for (let i = 0; i < formFeedback.length; i++) {
+    formFeedback[i].addEventListener("submit", formDataProcessing);
+    formFeedback[i].setAttribute("data-form-number", i);
+  }
   // ------------------
   // functions assistants
   function cssClassReplace(elem, cssAddClass, cssRemoveClass) {
@@ -356,5 +478,33 @@ document.addEventListener("DOMContentLoaded", () => {
     if (ACTIVESLIDE < numRight) {
       arrowRight.classList.remove("js-arrow-disabled");
     }
+  }
+  // for form
+  function infoForm(elem, color, txt) {
+    elem.style.color = color;
+    elem.innerText = txt;
+  }
+  function createObjToSend(str) {
+    let date = new Date();
+    let userData = {
+      date: `${date.getDate()}.${parseInt(
+        date.getMonth() + 1,
+        10
+      )}.${date.getFullYear()}`,
+      time: `${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`,
+      phoneNumber: str,
+    };
+    let userDataJSON = JSON.stringify(userData);
+    return userDataJSON;
+  }
+  function showHiddenInfoText(elemInfoTxt, currentNum, elemInput, str, color) {
+    elemInfoTxt[currentNum].style.visibility = "visible";
+    infoForm(infoText[currentNum], color, str);
+    elemInput[currentNum].value = "";
+  }
+  function showInfoTextDefaultTime(time, elem, str) {
+    setTimeout(function () {
+      infoForm(elem, "", str);
+    }, time);
   }
 });
