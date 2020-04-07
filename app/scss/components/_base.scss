@@ -11,6 +11,12 @@
   padding: 0;
 }
 
+*:invalid,
+:-moz-submit-invalid,
+:-moz-ui-invalid {
+  box-shadow: none;
+}
+
 [type="checkbox"]:invalid {
   box-shadow: none;
 }
