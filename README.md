@@ -39,3 +39,5 @@ ALTER TABLE `userdata`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 COMMIT;
 ```
+
+[Посетить сайт](http://bankrot.technoninja-xp.h1n.ru/)
