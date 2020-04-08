@@ -10,8 +10,7 @@ let gulp = require("gulp"),
   plumber = require("gulp-plumber"),
   notify = require("gulp-notify"),
   tingpng = require("gulp-tinypng"),
-  minify = require("gulp-minify"),
-  htmlmin = require("gulp-htmlmin");
+  minify = require("gulp-minify");
 
 //sass
 gulp.task("scss", () => {
@@ -127,14 +126,6 @@ gulp.task("video", () => {
   return gulp.src("app/video/**/*").pipe(browserSync.reload({ stream: true }));
 });
 
-//html valid
-gulp.task("html-mini", () => {
-  return gulp
-    .src("app/*.html")
-    .pipe(htmlmin({ collapseWhitespace: true }))
-    .pipe(gulp.dest("dist/"));
-});
-
 //browserSync
 gulp.task("browser-sync", () => {
   browserSync.init({
@@ -170,7 +161,7 @@ gulp.task(
 );
 
 // build
-gulp.task("build", ["scss", "pug", "html-mini", "tingpng"], () => {
+gulp.task("build", ["scss", "pug", "tingpng"], () => {
   let buildCss = gulp.src("app/css/*-min.css").pipe(gulp.dest("dist/css")),
     buildFont = gulp.src("app/fonts/**/*").pipe(gulp.dest("dist/fonts")),
     buildJs = gulp.src("app/js/*-min.js").pipe(gulp.dest("dist/js")),
@@ -181,5 +172,6 @@ gulp.task("build", ["scss", "pug", "html-mini", "tingpng"], () => {
       .src("app/img/favicon/*")
       .pipe(gulp.dest("dist/img/favicon")),
     buildDocs = gulp.src("app/docs/**/*.pdf").pipe(gulp.dest("dist/docs")),
-    buildPolicy = gulp.src("app/policy/*.pdf").pipe(gulp.dest("dist/policy"));
+    buildPolicy = gulp.src("app/policy/*.pdf").pipe(gulp.dest("dist/policy")),
+    buildHtml = gulp.src("app/*.html").pipe(gulp.dest("dist"));
 });
