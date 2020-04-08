@@ -10,7 +10,7 @@ if (mb_strlen($date) > 10 || (mb_strlen($time) > 8) || (mb_strlen($phoneNum) > 2
 }
 
 require "connect-localhost.php";
-// require "connect.php"
+// require "connect.php";
 
 $mysql->query("INSERT INTO `userdata` (`id`, `date`, `time`, `phoneNumber`)
  VALUES(NULL, '$date', '$time', '$phoneNum')");
