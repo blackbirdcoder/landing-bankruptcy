@@ -190,8 +190,8 @@ document.addEventListener("DOMContentLoaded", () => {
   // ---------------------------------
 
   // --- infographics card animations ---
-  const timeCompletion = 800;
-  const timeLeaving = 900;
+  const timeCompletion = 600; // 800
+  const timeLeaving = 700; // 900
   let playAnimation = (elem) => {
     window.removeEventListener("scroll", infographicsInSight);
     for (let i = 1; i < elem.length; i++) {
@@ -454,6 +454,10 @@ document.addEventListener("DOMContentLoaded", () => {
     formFeedback[i].addEventListener("submit", formDataProcessing);
     formFeedback[i].setAttribute("data-form-number", i);
   }
+  // -------------------
+  // ---Scroll Smooth---
+  scrollSmooth("a.js-smooth-scroll", 700);
+  scrollSmooth("a.js-smooth-scroll-slow", 4000);
   // ------------------
   // functions assistants
   function cssClassReplace(elem, cssAddClass, cssRemoveClass) {
@@ -507,4 +511,22 @@ document.addEventListener("DOMContentLoaded", () => {
       infoForm(elem, "", str);
     }, time);
   }
+  // *** JQUERY ***
+  // for Scroll Smooth
+  function scrollSmooth(elem, time) {
+    $(elem).on("click", function () {
+      let href = $(this).attr("href");
+      $("html, body").animate(
+        {
+          scrollTop: $(href).offset().top,
+        },
+        {
+          duration: time,
+          easing: "linear",
+        }
+      );
+      return false;
+    });
+  }
+  // -------------------
 });
