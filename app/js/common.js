@@ -436,7 +436,7 @@ document.addEventListener("DOMContentLoaded", () => {
             infoText,
             currentNumber,
             inputPhone,
-            "Были указанны некорректные данные",
+            "Были указаны некорректные данные",
             "#ff0c0a"
           );
           return false;
