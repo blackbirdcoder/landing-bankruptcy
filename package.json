@@ -29,8 +29,7 @@
     "gulp-sass": "^4.0.2",
     "gulp-sourcemaps": "^2.6.5",
     "gulp-tinypng": "^1.0.2",
-    "gulp-uglify": "^3.0.2",
-    "gulp-w3c-html-validator": "^1.4.4"
+    "gulp-uglify": "^3.0.2"
   },
   "dependencies": {
     "animate.css": "^3.7.2",

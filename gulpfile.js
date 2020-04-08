@@ -11,7 +11,6 @@ let gulp = require("gulp"),
   notify = require("gulp-notify"),
   tingpng = require("gulp-tinypng"),
   minify = require("gulp-minify"),
-  validateHtml = require("gulp-w3c-html-validator"),
   htmlmin = require("gulp-htmlmin");
 
 //sass
@@ -129,11 +128,9 @@ gulp.task("video", () => {
 });
 
 //html valid
-gulp.task("html-valid", () => {
+gulp.task("html-mini", () => {
   return gulp
     .src("app/*.html")
-    .pipe(validateHtml())
-    .pipe(validateHtml.reporter())
     .pipe(htmlmin({ collapseWhitespace: true }))
     .pipe(gulp.dest("dist/"));
 });
@@ -173,7 +170,7 @@ gulp.task(
 );
 
 // build
-gulp.task("build", ["scss", "pug", "html-valid", "tingpng"], () => {
+gulp.task("build", ["scss", "pug", "html-mini", "tingpng"], () => {
   let buildCss = gulp.src("app/css/*-min.css").pipe(gulp.dest("dist/css")),
     buildFont = gulp.src("app/fonts/**/*").pipe(gulp.dest("dist/fonts")),
     buildJs = gulp.src("app/js/*-min.js").pipe(gulp.dest("dist/js")),
