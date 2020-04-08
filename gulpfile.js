@@ -116,7 +116,7 @@ gulp.task("img", () => {
 gulp.task("tingpng", () => {
   gulp
     .src("app/img/*.+(png|jpg)")
-    .pipe(tingpng("m71fp3MWlx1BMKkk7Vy32lXlK2RMM0GB"))
+    .pipe(tingpng("m71fp3MWlx1BMKkk7Vy32lXlK2RMM0GB")) // Dear Friend here is YOUR KEY
     .pipe(gulp.dest("dist/img"))
     .pipe(notify({ message: "All images are successfully compressed" }));
 });
