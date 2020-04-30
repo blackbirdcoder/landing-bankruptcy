@@ -32,7 +32,7 @@
   },
   "dependencies": {
     "animate.css": "^3.7.2",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "leaflet": "^1.6.0",
     "normalize.css": "^8.0.1",
     "swiper": "^5.2.1",
